@@ -3589,8 +3589,8 @@ body > header {
   @media (min-width: 991px) {
     .sidebar-container .inner__sidebar {
       position: fixed;
-      bottom: 41px;
-      top: 114px;
+      bottom: 0px;
+      top: 60px;
       width: 275px; }
       .sidebar-container .inner__sidebar::-webkit-scrollbar {
         width: 10px; }
@@ -3613,7 +3613,7 @@ body > header {
         font-weight: normal;
         text-decoration: none;
         line-height: 19px;
-        margin: 10px 0 0 0;
+        margin: 7px 0 0 0;
         display: block;
         color: #ddd; }
       .sidebar-container .inner__sidebar .sidebar-wrapper .sidebar-group li a:hover {
@@ -4047,6 +4047,9 @@ img.nofloat {
 
   .content {
     margin-top: 70px; } }
+.inner__content.header h1 {
+  margin-top: 10px; }
+
 .container-height {
   overflow: hidden; }
 
