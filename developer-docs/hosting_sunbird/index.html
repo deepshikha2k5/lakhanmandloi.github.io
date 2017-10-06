@@ -30,6 +30,12 @@
 	<meta name="twitter:title" content="Hosting" />
 	<meta name="twitter:description" content="Hosting" />
 	<meta name="twitter:image" content="/img/og_image.png" />
+	
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 2018 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -38,10 +44,10 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="/js/all.js"></script>
+	<script type="text/javascript" src="/js/all.js?1.0.0"></script>
 
 	<link href="/css/owl/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="/css/style.css?1.0.0" rel="stylesheet" type="text/css" />
 
 	
 	
@@ -72,7 +78,7 @@
     </header>
     <nav class="sidebar-container" id="mobile-dropdown">
       <!--<div class="inner__searchbar">
-        <script type="text/javascript">$(function() { React.render(React.createElement(SearchBar, null), $("#8ge8crq4vzv")[0]); });</script><div id="8ge8crq4vzv"><div class="search" data-reactid=".ghup1lnye6" data-react-checksum="1378787088"><div class="search-icon" data-reactid=".ghup1lnye6.0"><i class="material-icons" data-reactid=".ghup1lnye6.0.0">search</i></div><div class="search-bar" data-reactid=".ghup1lnye6.1"><form data-reactid=".ghup1lnye6.1.0"><input type="text" name="search" class="" autocomplete="off" placeholder="Search" value="" data-reactid=".ghup1lnye6.1.0.0"></form></div><div class="search-results" data-reactid=".ghup1lnye6.2"></div></div></div>
+        <script type="text/javascript">$(function() { React.render(React.createElement(SearchBar, null), $("#9kkhxztrpa8")[0]); });</script><div id="9kkhxztrpa8"><div class="search" data-reactid=".fcy23ogfae" data-react-checksum="827432426"><div class="search-icon" data-reactid=".fcy23ogfae.0"><i class="material-icons" data-reactid=".fcy23ogfae.0.0">search</i></div><div class="search-bar" data-reactid=".fcy23ogfae.1"><form data-reactid=".fcy23ogfae.1.0"><input type="text" name="search" class="" autocomplete="off" placeholder="Search" value="" data-reactid=".fcy23ogfae.1.0.0"></form></div><div class="search-results" data-reactid=".fcy23ogfae.2"></div></div></div>
       </div>-->
       <div class="inner__sidebar">
         <div id="">
@@ -109,7 +115,7 @@
 				</li>
 			</ul>
 			<a href="/features-documentation/">
-				<h4 class="sidebar-group-title">Features</h4>
+				<h4 class="sidebar-group-title">Product Features</h4>
 			</a>
 			<ul class="sidebar-group" >
 				<li>
@@ -150,7 +156,7 @@
 								<a href="/features-documentation/contentlifecycle">Content Creation</a>
 							</li>
 							<li>
-								<a href="/features-documentation/contentlifecycle">Review</a>
+								<a href="/features-documentation/review">Review</a>
 							</li>
 							<li>
 								<a href="/features-documentation/publishing">Publishing</a>
@@ -169,23 +175,23 @@
 								<a href="/features-documentation/intellectualproperty">Intellectual Property</a>
 							</li>
 							<li>
-								<a href="/features-documentation/intellectualproperty">Content Submission</a>
+								<a href="/features-documentation/contentsubmission">Content Submission</a>
 							</li>
 							<li>
-								<a href="/features-documentation/intellectualproperty">Code Submission</a>
+								<a href="/features-documentation/codesubmission">Code Submission</a>
 							</li>
 							<li>
-								<a href="/features-documentation/intellectualproperty">Review</a>
+								<a href="/features-documentation/review">Review</a>
 							</li>
 						</ul>
 					</div>
 				</li>
 				<li>
 					<div class="">
-						<h4 class="sidebar-group-title">Participate</h4>
-						<ul class="sidebar-group">
+						<a href="/participate/">Participate</a>
+						<!--<ul class="sidebar-group">
 							<li>
-								<a href="#">Participation Process</a>
+								<a href="/participate/">Participation Process</a>
 							</li>
 							<li>
 								<a href="#">Suggest Design</a>
@@ -211,7 +217,7 @@
 							<li>
 								<a href="#">Maintain</a>
 							</li>
-						</ul>
+						</ul>-->
 					</div>
 				</li>
 				<li>
@@ -221,7 +227,7 @@
 					<a href="/features-documentation/collaborationpartnership">Collaboration and Partnership</a>
 				</li>
 				<li>
-					<a href="#">Supported Environments</a>
+					<a href="/features-documentation/supportedenvironment">Supported Environments</a>
 				</li>
 			</ul>
 			<a href="/developer-docs">
@@ -241,16 +247,22 @@
 				</li>
 				<li>
 					<div class="">
-						<a class="sidebar-group-title" href="/developer-docs/install_sunbird/">Installing Sunbird</a>
+						<a class="sidebar-group-title" href="/developer-docs/developer_install/">Installing Sunbird</a>
 						<ul class="sidebar-group">
 							<li>
-								<a href="/developer-docs/install_sunbird/">Prerequisites</a>
+								<a href="/developer-docs/developer_install/#prerequisites">Prerequisites</a>
+							</li>
+							<!--<li>
+								<a href="/developer-docs/developer_install/#setup">Quick Installation</a>
+							</li>-->
+							<li>
+								<a href="/developer-docs/developer_install/#setup">Complete Installation Procedure</a>
 							</li>
 							<li>
-								<a href="/developer-docs/install_sunbird/">Quick Installation</a>
+								<a href="/developer-docs/medium_scale_deploy">Medium Scale Deployment</a>
 							</li>
 							<li>
-								<a href="/developer-docs/install_sunbird/">Complete Installation Procedure</a>
+								<a href="/developer-docs/large_scale_deploy">Large Scale Deployment</a>
 							</li>
 						</ul>
 					</div>
@@ -258,7 +270,7 @@
 				<li>
 					<div class="">
 						<a class="sidebar-group-title" href="/developer-docs/extending_sunbird/">Extending Sunbird</a>
-						<ul class="sidebar-group">
+						<!--<ul class="sidebar-group">
 							<li>
 								<a href="/developer-docs/extending_sunbird/">Overview</a>
 							</li>
@@ -268,22 +280,22 @@
 							<li>
 								<a href="/developer-docs/extending_sunbird/">Extension Options</a>
 							</li>
-						</ul>
+						</ul>-->
 					</div>
 				</li>
 				<li>
 					<div class="">
 						<a class="sidebar-group-title" href="/developer-docs/customize_sunbird/">Customizing Sunbird</a>
-						<ul class="sidebar-group">
+						<!--<ul class="sidebar-group">
 							<li>
-								<a href="/developer-docs/customize_sunbird/">Changing the Look and Feel</a>
+								<a href="/developer-docs/customize_sunbird/#changing-the-look-and-feel">Changing the Look and Feel</a>
 							</li>
-						</ul>
+						</ul>-->
 					</div>
 				</li>
 				<li>
 					<div class="">
-						<a class="sidebar-group-title" href="/developer-docs/api_ref/">API Reference</a>
+						<a class="sidebar-group-title" href="/apis/">API Reference</a>
 						<ul class="sidebar-group">
 							<li>
 								<a href="/developer-docs/api_ref/">Custom Javascript Plugins</a>
@@ -297,7 +309,7 @@
 				<li>
 					<div class="">
 						<a class="sidebar-group-title">Code Contribution</a>
-						<ul class="sidebar-group">
+						<!--<ul class="sidebar-group">
 							<li>
 								<a href="/developer-docs/code_contribute/">Overview</a>
 							</li>
@@ -307,58 +319,61 @@
 							<li>
 								<a href="/developer-docs/code_contribute/">Contributor Roles</a>
 							</li>
-						</ul>
+						</ul>-->
 					</div>
 				</li>
 			</ul>
-			<a href="/ntp-faq%20doc/">
-				<h4 class="sidebar-group-title">NTP FAQ's</h4>
+			<a href="/faqs/">
+				<h4 class="sidebar-group-title">Frequently asked questions</h4>
 			</a>
 			<ul class="sidebar-group" >
 				<li>
-					<a href="/ntp-faq%20doc/audience">Audience</a>
+					<a href="/faqs/audience">Audience</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/contentcreation">Content Creation</a>
+					<a href="/faqs/contentcreation">Content Creation</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/content_format">Content Format</a>
+					<a href="/faqs/content_format">Content Format</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/content_repo">Content Repo</a>
+					<a href="/faqs/content_repo">Content Repo</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/content_types">Content Types</a>
+					<a href="/faqs/contentreviews">Content Review</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/content_upload">Content Upload</a>
+					<a href="/faqs/content_types">Content Types</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/feature">Features</a>
+					<a href="/faqs/content_upload">Content Upload</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/fixerrors">Fix Errors</a>
+					<a href="/faqs/feature">Features</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/glossary">Glossary</a>
+					<a href="/faqs/fixerrors">Fix Errors</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/helpsupport">Help Support</a>
+					<a href="/faqs/glossary">Glossary</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/intellectual_propertylicensesstandards">Intellectual Property Licenses Standards</a>
+					<a href="/faqs/helpsupport">Help Support</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/registrationenrolment">Registration Enrollment</a>
+					<a href="/faqs/intellectual_propertylicensesstandards">Intellectual Property Licenses Standards</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/signin">Sign In</a>
+					<a href="/faqs/registrationenrolment">Registration Enrollment</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/taxonomymetadataframework">Texonomy Meta Data Framework</a>
+					<a href="/faqs/signin">Sign In</a>
 				</li>
 				<li>
-					<a href="/ntp-faq%20doc/user_rightspermissions">Users Rights Permission</a>
+					<a href="/faqs/taxonomymetadataframework">Taxonomy Meta Data Framework</a>
+				</li>
+				<li>
+					<a href="/faqs/user_rightspermissions">Users Rights Permission</a>
 				</li>
 			</ul>
 		</div>
@@ -376,7 +391,7 @@
         <h1>Hosting </h1>
 
         
-          <span class="hide-selector"><script type="text/javascript">$(function() { React.render(React.createElement(SectionSelector, {current_path: "developer-docs/hosting_sunbird", site_map: {"marketing-channels":{},"cross-channel-analytics":{},"data-exchange":{},"basic-setup":{},"next-steps":{},"github-sdks":{},"getting-started":{},"other":{}}, sections: [{"key":"overview","name":"Overview"},{"key":"guide","name":"Guide"},{"key":"support","name":"Support"},{"key":"advanced","name":"Advanced"},{"key":"examples","name":"Examples"}], platforms: {}, url_section: ""}), $("#7avrkg3lt3x")[0]); });</script><div id="7avrkg3lt3x"><div class="section-selector" data-reactid=".1ba8iy7cf2m" data-react-checksum="-1539962026"><div class="section-group" data-reactid=".1ba8iy7cf2m.0"><a class="section section-inactive" href="/developer-docs/hosting_sunbird/" data-reactid=".1ba8iy7cf2m.0.$overview">Overview</a><a class="section section-inactive" href="/developer-docs/hosting_sunbird//" data-reactid=".1ba8iy7cf2m.0.$guide">Guide</a><a class="section section-inactive" href="/developer-docs/hosting_sunbird//" data-reactid=".1ba8iy7cf2m.0.$support">Support</a><a class="section section-inactive" href="/developer-docs/hosting_sunbird//" data-reactid=".1ba8iy7cf2m.0.$advanced">Advanced</a><a class="section section-inactive" href="/developer-docs/hosting_sunbird//" data-reactid=".1ba8iy7cf2m.0.$examples">Examples</a></div></div></div></span>
+          <span class="hide-selector"><script type="text/javascript">$(function() { React.render(React.createElement(SectionSelector, {current_path: "developer-docs/hosting_sunbird", site_map: {"marketing-channels":{},"cross-channel-analytics":{},"data-exchange":{},"basic-setup":{},"next-steps":{},"github-sdks":{},"getting-started":{},"other":{}}, sections: [{"key":"overview","name":"Overview"},{"key":"guide","name":"Guide"},{"key":"support","name":"Support"},{"key":"advanced","name":"Advanced"},{"key":"examples","name":"Examples"}], platforms: {}, url_section: ""}), $("#j7kgoe0wxl")[0]); });</script><div id="j7kgoe0wxl"><div class="section-selector" data-reactid=".awrghs4pck" data-react-checksum="-979300979"><div class="section-group" data-reactid=".awrghs4pck.0"><a class="section section-inactive" href="/developer-docs/hosting_sunbird/" data-reactid=".awrghs4pck.0.$overview">Overview</a><a class="section section-inactive" href="/developer-docs/hosting_sunbird//" data-reactid=".awrghs4pck.0.$guide">Guide</a><a class="section section-inactive" href="/developer-docs/hosting_sunbird//" data-reactid=".awrghs4pck.0.$support">Support</a><a class="section section-inactive" href="/developer-docs/hosting_sunbird//" data-reactid=".awrghs4pck.0.$advanced">Advanced</a><a class="section section-inactive" href="/developer-docs/hosting_sunbird//" data-reactid=".awrghs4pck.0.$examples">Examples</a></div></div></div></span>
         
       </div>
 

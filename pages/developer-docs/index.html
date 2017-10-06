@@ -1,127 +1,35 @@
-<p># Installation</p>
+<h2 id="installation-overview">Installation Overview</h2>
 
-<p>If you’ve read the Sunbird architecture description, you will be aware that it requires several distributed components for runtime operation.</p>
-<p>This is web-based system,which means there there is no executable file (aka no .exe files), and it must  run on a web server and accessed through a web browser. Getting started with this complexity can be cumbersome. Fortunately,we've simplified the installation process for some common scenarios.
+<h1 id="installation">Installation</h1>
 
-## Choosing an installation method
-Based on your usage and the level of complexity which you are comfortable with, there are a few different options for installing and running Sunbird.
+<p>If you’ve read the Sunbird architecture description, you will be aware that it requires several distributed components for runtime operation. This is web-based system,which means there there is no executable file (aka no .exe files), and it must  run on a web server and accessed through a web browser. Getting started with this complexity can be cumbersome. Fortunately,we’ve simplified the installation process for some common scenarios.</p>
 
-### Pre-requisites
-Each of the installation option requires a few pre-requisites to be satisfied. 
+<h2 id="choosing-an-installation-method">Choosing an installation method</h2>
+<p>Based on your usage and the level of complexity which you are comfortable with, there are a few different options for installing and running Sunbird.</p>
+
+<h3 id="pre-requisites">Pre-requisites</h3>
+<p>Each of the installation option requires a few pre-requisites to be satisfied. 
 At a minimum, you should be:
 * Using a Linux OS flavour (developer installation is possible on MacOS).
 * Comfortable with a terminal.Sunbird installation is triggered from the command-line terminal.
+Note: pre-requisites are not required to try out the sandbox option.</p>
 
-Note: pre-requisites are not required to try out the sandbox option.
- 
-* [I want to try Sunbird]<!---
-## Choosing an installation method
--->
-Based on your usage and the level of complexity which you are comfortable with, there are a few different paths to installing and running Sunbird.
+<h2 id="installation-options">Installation Options</h2>
 
-* [I want to extend Sunbird]#### **I want to extend Sunbird**
-If you plan to modify and contribute code to the Sunbird project, we recommend you follow the process [Developer installation]
+<h3 id="i-want-to-try-sunbird">I want to try Sunbird</h3>
 
-<!---
-### I want 10-10K users to use Sunbird (Medium Scale)
--->
+<p>If you are looking to experiment with Sunbird and test out its feature set, we recommend you use the <a href="https://staging.open-sunbird.org/">Sunbird sandbox</a> which is already running in the cloud. Note, any data created in the sandbox will be erased after 24 hours.</p>
 
-If you plan to run Sunbird in a setting of 10-10000 users, we recommend you follow the [small/medium deployment](https://github.com/project-sunbird/sunbird-commons/blob/master/Hackathon/Installation_S.md) process. This option uses less resources to run Sunbird and has some limits on how much the installed application can scale.
+<h3 id="i-want-to-extend-sunbird">I want to extend Sunbird</h3>
 
+<p>If you plan to modify and contribute code to the Sunbird project, we recommend you follow the process <a href="/developer-docs/developer_install">Developer installation</a>. This will get you started quickly so you can start extending Sunbird.</p>
 
-This will get you started quickly so you can start extending Sunbird.
+<h3 id="i-want-a-medium-scale-deployment-of-sunird">I want a medium scale deployment of Sunird</h3>
 
-* [I want a medium scale deployment of Sunbird]### **I want a medium scale deployment of Sunird**
-If you plan to run Sunbird in a setting upto 10k users, we recommend you follow the process [Medium scale deployment] 
+<p>If you plan to run Sunbird in a setting upto 10k users, we recommend you follow the process <a href="/developer-docs/medium_scale_deploy">Medium scale deployment</a>. This option uses less resources to run Sunbird and has some limits on how much the installed application can scale.</p>
 
-# Medium scale Deployment of Sunbird
+<h3 id="i-want-a-large-scale-deployment-of-sunbird">I want a large scale deployment of Sunbird</h3>
 
-## Prerequisites
-This section should expand as open source contributions to support multiple run times increase over time. Presently, the software and reference steps consider the following tech stack:
+<p>If you plan to run Sunbird in a setting with 10k+ users, we recommend you follow the <a href="/developer-docs/large_scale_deploy">Large scale deployment</a> process. 
+This will deploy Sunbird to a cloud-hosting provider of your choice in a fully containerised manner. The containers allow you to scale the resources Sunbird consumes based on the usage.</p>
 
-Required:
-- Linux, preferably Ubuntu
-- [Docker Swarm Mode](https://docs.docker.com/engine/swarm/)
-- [Ansible](https://www.ansible.com/)
-
-Optional:
-- A CI server, e.x. [Jenkins](https://jenkins.io/), to build extensions and take future upgrades
-- a source control mechanism, e.x. [Git](https://github.com/)
-
-## Installation
-### Production
-You have a choice to use bare metal machines or go with a Cloud provider of your choice, which can provide you Linux runtime with root access. Initial scripts contain automation to setup Sunbird on [Azure](https://azure.microsoft.com/en-in/) and assume that you have a Unix runtime on the machine you are initiating the installation.
-- Create a RSA 2048 bit SSH keypair
-- Set up Docker Swarm Mode using [ACS-Engine](https://github.com/Azure/acs-engine)
-- Bootstrap the servers using [Bootstrap script](#machine-bootstrap)
-- SSH into Master node
-- Clone [this repo](https://github.com/project-sunbird/sunbird-devops)
-- Bootstrap [configuration](#configuration-bootstrap)
-- Install [databases](#database-installations)
-- Bootstrap [databases](#database-bootstrap)
-- Deploy [services](#service-deploy)
-
-## Installation Details
-Getting started with installation can be a daunting task. Fortunately, we've simplified the installation process.
-
-### Machine bootstrap
-This bootstraps the VMs with initial configuration needed for automated script access.
-```
-ansible-playbook -i inventory/? --tags "bootstrap_any" -e "hosts=?" -e "bootstrap_secret_file=production" bootstrap.yml --ask-vault-pass
-```
-### Configuration bootstrap
-Typically, this step configures the production environment with the basic configuration required to boot up services, e.x. DB connection strings, secrets, etc
-```
-ansible-playbook -i ansible/inventory/? ansible/bootstrap.yml --extra-vars hosts=production-swarm-manager swarm_master=true --tags bootstrap_swarm --vault-password-file /run/secrets/vault-pass
-```
-### Install Database
-
-Sunbird uses [Mongo](https://www.mongodb.com/), [Cassandra](http://cassandra.apache.org/), [Postgres](https://www.postgresql.org/) and [Elasticsearch](https://www.elastic.co/products/elasticsearch) for various scaleable persistence and query needs.
-
-This repo contains provisioning scripts for DBs at [ansible/provision.yml](https://github.com/project-sunbird/sunbird-devops/blob/master/ansible/provision.yml). You may use these or setup/reuse DB as appropriate in your deployment environments.
-
-All DBs have Backup and Restore [scripts](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible).
-
-### Service deploy
-Sunbird has a set of services, serving separate functional needs. Refer to [sunbird-commons](https://github.com/project-sunbird/sunbird-commons) for a better understanding of the service oriented design.
-#### API Manager
-```
-METADATA_FILE=? ARTIFACT_LABEL=gold ENV=production ./pipelines/api-manager/deploy.sh
-```
-#### Proxy
-```
-METADATA_FILE=? ARTIFACT_LABEL=gold ENV=production ./pipelines/proxy/deploy.sh
-```
-#### FrontEnd
-##### Player
-```
-METADATA_FILE=? ENV=production ARTIFACT_LABEL=gold ./pipelines/sunbird-player/deploy.sh
-```
-#### Middleware
-##### Actor Service
-```
-METADATA_FILE=? ENV=production ARTIFACT_LABEL=gold ./pipelines/sunbird-actor-service/deploy.sh
-```
-##### Content Service
-```
-METADATA_FILE=? ENV=production ARTIFACT_LABEL=gold ./pipelines/sunbird-content-service/deploy.sh
-```
-##### Learner Service
-```
-METADATA_FILE=? ENV=ntp-production ARTIFACT_LABEL=gold ./pipelines/sunbird-learner-service/deploy.sh
-```
-```METADATA_FILE``` describes the version needed for deployment.
-
-. 
-
-This option uses less resources to run Sunbird and has some limits on how much the installed application can scale.
-
-* [I want a large scale deployment of Sunbird]###  **I want a large scale deployment of Sunbird**
-If you plan to run Sunbird in a setting with 10k+ users, we recommend you follow the [large-scale deployment](/install/large-scale-cloud) process 
-
-## Coming Soon
-. 
-
-This will deploy Sunbird to a cloud-hosting provider of your choice in a fully containerised manner. The containers allow you to scale the resources Sunbird consumes based on the usage.
-
-</p>
