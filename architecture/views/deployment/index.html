@@ -78,7 +78,7 @@
     </header>
     <nav class="sidebar-container" id="mobile-dropdown">
       <!--<div class="inner__searchbar">
-        <script type="text/javascript">$(function() { React.render(React.createElement(SearchBar, null), $("#9kkhxztrpa8")[0]); });</script><div id="9kkhxztrpa8"><div class="search" data-reactid=".fcy23ogfae" data-react-checksum="827432426"><div class="search-icon" data-reactid=".fcy23ogfae.0"><i class="material-icons" data-reactid=".fcy23ogfae.0.0">search</i></div><div class="search-bar" data-reactid=".fcy23ogfae.1"><form data-reactid=".fcy23ogfae.1.0"><input type="text" name="search" class="" autocomplete="off" placeholder="Search" value="" data-reactid=".fcy23ogfae.1.0.0"></form></div><div class="search-results" data-reactid=".fcy23ogfae.2"></div></div></div>
+        <script type="text/javascript">$(function() { React.render(React.createElement(SearchBar, null), $("#fsqtr034g6d")[0]); });</script><div id="fsqtr034g6d"><div class="search" data-reactid=".znisisli3c" data-react-checksum="-844062568"><div class="search-icon" data-reactid=".znisisli3c.0"><i class="material-icons" data-reactid=".znisisli3c.0.0">search</i></div><div class="search-bar" data-reactid=".znisisli3c.1"><form data-reactid=".znisisli3c.1.0"><input type="text" name="search" class="" autocomplete="off" placeholder="Search" value="" data-reactid=".znisisli3c.1.0.0"></form></div><div class="search-results" data-reactid=".znisisli3c.2"></div></div></div>
       </div>-->
       <div class="inner__sidebar">
         <div id="">
@@ -391,7 +391,7 @@
         <h1>Deployment View </h1>
 
         
-          <span class="hide-selector"><script type="text/javascript">$(function() { React.render(React.createElement(SectionSelector, {current_path: "architecture/views/deployment", site_map: {"marketing-channels":{},"cross-channel-analytics":{},"data-exchange":{},"basic-setup":{},"next-steps":{},"github-sdks":{},"getting-started":{},"other":{}}, sections: [{"key":"overview","name":"Overview"},{"key":"guide","name":"Guide"},{"key":"support","name":"Support"},{"key":"advanced","name":"Advanced"},{"key":"examples","name":"Examples"}], platforms: {}, url_section: ""}), $("#cfmx8u6jtl")[0]); });</script><div id="cfmx8u6jtl"><div class="section-selector" data-reactid=".1e2ot5lwbdu" data-react-checksum="1016531980"><div class="section-group" data-reactid=".1e2ot5lwbdu.0"><a class="section section-inactive" href="/architecture/views/deployment/" data-reactid=".1e2ot5lwbdu.0.$overview">Overview</a><a class="section section-inactive" href="/architecture/views/deployment//" data-reactid=".1e2ot5lwbdu.0.$guide">Guide</a><a class="section section-inactive" href="/architecture/views/deployment//" data-reactid=".1e2ot5lwbdu.0.$support">Support</a><a class="section section-inactive" href="/architecture/views/deployment//" data-reactid=".1e2ot5lwbdu.0.$advanced">Advanced</a><a class="section section-inactive" href="/architecture/views/deployment//" data-reactid=".1e2ot5lwbdu.0.$examples">Examples</a></div></div></div></span>
+          <span class="hide-selector"><script type="text/javascript">$(function() { React.render(React.createElement(SectionSelector, {current_path: "architecture/views/deployment", site_map: {"marketing-channels":{},"cross-channel-analytics":{},"data-exchange":{},"basic-setup":{},"next-steps":{},"github-sdks":{},"getting-started":{},"other":{}}, sections: [{"key":"overview","name":"Overview"},{"key":"guide","name":"Guide"},{"key":"support","name":"Support"},{"key":"advanced","name":"Advanced"},{"key":"examples","name":"Examples"}], platforms: {}, url_section: ""}), $("#fa2rrtvfwq7")[0]); });</script><div id="fa2rrtvfwq7"><div class="section-selector" data-reactid=".26qsg35qnh0" data-react-checksum="-1765340904"><div class="section-group" data-reactid=".26qsg35qnh0.0"><a class="section section-inactive" href="/architecture/views/deployment/" data-reactid=".26qsg35qnh0.0.$overview">Overview</a><a class="section section-inactive" href="/architecture/views/deployment//" data-reactid=".26qsg35qnh0.0.$guide">Guide</a><a class="section section-inactive" href="/architecture/views/deployment//" data-reactid=".26qsg35qnh0.0.$support">Support</a><a class="section section-inactive" href="/architecture/views/deployment//" data-reactid=".26qsg35qnh0.0.$advanced">Advanced</a><a class="section section-inactive" href="/architecture/views/deployment//" data-reactid=".26qsg35qnh0.0.$examples">Examples</a></div></div></div></span>
         
       </div>
 
@@ -401,26 +401,30 @@
         
           <h1 id="deployment-view">Deployment View</h1>
 
-<h2 id="deployment-architecture">Deployment Architecture</h2>
+<p><strong>Infrastructure</strong></p>
 
-<h3 id="infrastructure">Infrastructure</h3>
 <p>Sunbird can run on Virtual Machines (VMs) on various Cloud providers or bare metal. Cloud Infrastructure automation is work in progress.</p>
 
-<h3 id="stable-builds-registry">Stable Builds Registry</h3>
+<p><strong>Stable Builds Registry</strong></p>
+
 <p>Sunbird builds are available at a <a href="https://hub.docker.com/u/sunbird/dashboard/">Image Registry</a>. These builds are in the form of a <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a>. Stable releases are tagged as <code>gold</code>. Deployment scripts pull the <code>gold</code> images for production deployment. The <code>gold</code> images are also versioned to allow for release management and upgrade paths.</p>
 
-<h3 id="software-runtime">Software Runtime</h3>
+<p><strong>Software Runtime</strong></p>
+
 <p>Most runtimes in Sunbird are containerized as <a href="https://www.docker.com/what-container">Docker containers</a> for portability, process isolation and standardization.<br />
 For container orchestration, this repo contains scripts to run Sunbird on <a href="https://docs.docker.com/engine/swarm/">Docker Swarm</a>. Cloud providers provide container services. In this repo, we are using <a href="https://github.com/Azure/acs-engine">ACS-Engine</a>.</p>
 
-<h3 id="logging-monitoring-and-operational-dashboards">Logging, Monitoring and Operational dashboards</h3>
+<p><strong>Logging, Monitoring and Operational dashboards</strong></p>
+
 <p>Sunbird comes with log aggregation and metrics reporting out of the box. For log aggregation, Sunbird is using a combination of <a href="https://github.com/google/cadvisor">cAdvisor</a>, <a href="https://www.elastic.co/webinars/introduction-elk-stack">ELK stack</a>, <a href="https://prometheus.io/">Prometheus</a> and their plugin ecosystem.
 Ops dashboards are built using <a href="https://grafana.com/">Grafana</a> with some <a href="https://github.com/project-sunbird/sunbird-devops/tree/master/cloud/monitoring/grafana">reference</a> dashboards.</p>
 
-<h3 id="custom-builds">Custom builds</h3>
+<p><strong>Custom builds</strong></p>
+
 <p>Sunbird is extendible. Sunbird can be taken as a base image with custom implementation of public interfaces and rebuilt for deployment. Scripts are available for ramping up of complex deployments with support to run local build promotions and deployments.</p>
 
-<h2 id="license">License</h2>
+<p><strong>License</strong></p>
+
 <p>The code in this repository is licensed under AGPL-3.0 unless otherwise noted. Please see the <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/LICENSE">LICENSE</a> file for details.</p>
 
 
