@@ -1,4 +1,4 @@
-<h1 id="conceptual-view">Conceptual View</h1>
+<h3 id="conceptual-view">Conceptual View</h3>
 
 <p>The conceptual view or functional view is built on the core stakeholders in Sunbird which comprises of:</p>
 
@@ -16,16 +16,22 @@
 
 <p><strong>Organization</strong></p>
 
-<p>In Sunbird, the user base is not just limited to individuals but it spans across organizations like schools, colleges, education boards &amp; departments, etc. In broader terms, Sunbird architecture defines users as Organizations”.</p>
+<p>In Sunbird, the user base is not just limited to individuals but it spans across organizations like schools, colleges, education boards &amp; departments, etc. In broader terms, Sunbird architecture defines users as Organizations.</p>
 
-<p>Following is the hierarchical structure of organization, the basic entity is a Member, where in a member can play following roles:
-+ <strong>Admin:</strong> In Sunbird, the Admin has capabilities of adding or removing, changing the roles of other members. Also, an Admin can add or remove sub-hierarchical organizations.
-+ <strong>Member:</strong> A member can be a part of an organization also a member can view other members of an organization too.</p>
+<p>Following is the hierarchical structure of organization, the basic entity is a Member, where in a member can play following roles:</p>
 
-<p>The Organization in Sunbird is designed around the following objects with following attributes:
-+ <strong>Organization:</strong> Organization Id, Name, Description ,Parent Organization Id etc.
-+ <strong>Organization Members:</strong> Organization Id,Member Id,Role,Date Joined etc.
-+ <strong>Organization Hierarchy:</strong> Organization Id,Parent Organization Id,Relation.</p>
+<ul>
+  <li><strong>Admin:</strong> In Sunbird, the Admin has capabilities of adding or removing, changing the roles of other members. Also, an Admin can add or remove sub-hierarchical organizations.</li>
+  <li><strong>Member:</strong> A member can be a part of an organization also a member can view other members of an organization too.</li>
+</ul>
+
+<p>The Organization in Sunbird is designed around the following objects with following attributes:</p>
+
+<ul>
+  <li><strong>Organization:</strong> Organization Id, Name, Description ,Parent Organization Id etc.</li>
+  <li><strong>Organization Members:</strong> Organization Id,Member Id,Role,Date Joined etc.</li>
+  <li><strong>Organization Hierarchy:</strong> Organization Id,Parent Organization Id,Relation.</li>
+</ul>
 
 <p><strong>Users</strong></p>
 
@@ -69,12 +75,19 @@ User courses entity in Sunbird is designed around the following objects and attr
   </li>
 </ul>
 
-<p>The content player uses ItemSet and its configuration to show the assessment and the course player uses the release criteria &amp; rubric to release and evaluate the assessment. The Assessment entity in Sunbird is designed around the following objects:
-- <strong>AssessmentId</strong>: Identifier of the Sunbird content which contains the assessment,other attributes
-- <strong>ReleaseCriteria</strong>
-- <strong>Rubric</strong>
-Sunbird ItemSets and content is flexible and reusable in multiple contexts. This data is stored within the Sunbird infrastructure.</p>
+<p>The content player uses ItemSet and its configuration to show the assessment and the course player uses the release criteria &amp; rubric to release and evaluate the assessment. The Assessment entity in Sunbird is designed around the following objects:</p>
 
-<p>User Assessment Items contains the details of each attempt of all assessment items by the user are stored in User Assessment Items model. User Assessment Items entity in Sunbird is designed around the following objects:
-- <strong>User assessment:</strong> User Id, Course Id, Assessment Id, Assessment Item Id, Score, Result, Attempt Number, Last Attempted On</p>
+<ul>
+  <li><strong>AssessmentId</strong>: Identifier of the Sunbird content which contains the assessment,other attributes</li>
+  <li><strong>ReleaseCriteria</strong></li>
+  <li><strong>Rubric</strong></li>
+</ul>
+
+<p>Sunbird ItemSets and content is flexible and reusable in multiple contexts. This data is stored within the Sunbird infrastructure.</p>
+
+<p>User Assessment Items contains the details of each attempt of all assessment items by the user are stored in User Assessment Items model. User Assessment Items entity in Sunbird is designed around the following objects:</p>
+
+<ul>
+  <li><strong>User assessment:</strong> User Id, Course Id, Assessment Id, Assessment Item Id, Score, Result, Attempt Number, Last Attempted On</li>
+</ul>
 
