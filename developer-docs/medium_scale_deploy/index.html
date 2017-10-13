@@ -1,56 +1,36 @@
 <!DOCTYPE html>
 <html>
-  
-<head>
+  <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-	<title>Medium Scale Deployment - Sunbird</title>
-
-	<meta name="keywords" content="Learn, Collaborate, Contribute, Open Source, Movement" />
-	<meta name="description" content="About how developer can deploy" />
-
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-touch-fullscreen" content="yes" />
 	<link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
-
 	<meta name="msapplication-TileColor" content="#65d3f7">
 	<meta name="msapplication-TileImage" content="/img/favicon/mstile-150x150.png">
-
-	<!-- Open Graph tags -->
-	<meta property="og:title" content="Medium Scale Deployment - Sunbird" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="/developer-docs/medium_scale_deploy/" />
-	<meta property="og:image" content="/img/og_image.png" />
-	<meta property="og:description" content="About how developer can deploy" />
-
-	<!-- Twitter Card tags -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@sunbird" />
-	<meta name="twitter:title" content="Medium Scale Deployment" />
-	<meta name="twitter:description" content="About how developer can deploy" />
-	<meta name="twitter:image" content="/img/og_image.png" />
 	
+	<title>Sunbird Medium Scale Deployment</title>
+	<meta name="description" content="Sunbird Site About how developer can deploy"/>
+
 	<meta http-equiv="cache-control" content="max-age=0" />
 	<meta http-equiv="cache-control" content="no-cache" />
-	<meta http-equiv="expires" content="0" />
-	<meta http-equiv="expires" content="Tue, 01 Jan 2018 1:00:00 GMT" />
+	<meta http-equiv="Cache-Control" content="no-store" />
 	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="last-modified" content="2017-10-13 18:37:25 +0530">
+	<meta http-equiv="Expires" content="600" />
+	
+	
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<link rel="stylesheet" href="/css/owl/owl.carousel.min.css?13102017"  />
+	<link rel="stylesheet" href="/css/style.css?13102017"  />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="/js/all.js?1.0.0"></script>
-
-	<link href="/css/owl/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-	<link href="/css/style.css?1.0.0" rel="stylesheet" type="text/css" />
-
-	
-	
+	<script type="text/javascript" src="/js/bootstrap.min.js?13102017"></script>
+	<script type="text/javascript" src="/js/owl.carousel.min.js?13102017"></script>
 
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -60,9 +40,6 @@
 	  gtag('config', 'UA-106552125-1');
 	</script>
 </head>
-
-
-
 
   <body>
   <div class="container inner container-height docs">
@@ -77,9 +54,6 @@
       </button>
     </header>
     <nav class="sidebar-container" id="mobile-dropdown">
-      <!--<div class="inner__searchbar">
-        <script type="text/javascript">$(function() { React.render(React.createElement(SearchBar, null), $("#37s8bfvovde")[0]); });</script><div id="37s8bfvovde"><div class="search" data-reactid=".28i4o1y2xj2" data-react-checksum="2031328277"><div class="search-icon" data-reactid=".28i4o1y2xj2.0"><i class="material-icons" data-reactid=".28i4o1y2xj2.0.0">search</i></div><div class="search-bar" data-reactid=".28i4o1y2xj2.1"><form data-reactid=".28i4o1y2xj2.1.0"><input type="text" name="search" class="" autocomplete="off" placeholder="Search" value="" data-reactid=".28i4o1y2xj2.1.0.0"></form></div><div class="search-results" data-reactid=".28i4o1y2xj2.2"></div></div></div>
-      </div>-->
       <div class="inner__sidebar">
         <div id="">
 	<div class="sidebar-wrapper developer-docs">
@@ -89,14 +63,14 @@
 			</a>
 			<ul class="sidebar-group architecture">
 				<li>
-					<a href="/architecture/">Overview</a>
+					<a href="/architecture/overview/">Overview</a>
 				</li>
 				<li>
 					<a href="/architecture/design/">Design</a>
 				</li>
 				<li>
 					<div class="">
-						<h4 class="sidebar-group-title">Elementary Views</h4>
+						<a href="/architecture/views/elementryview/">Views</a>
 						<ul class="sidebar-group">
 							<li>
 								<a href="/architecture/views/logical/">Logical View</a>
@@ -113,19 +87,30 @@
 						</ul>
 					</div>
 				</li>
+				<li>
+					<a href="/architecture/usecase/">Use Cases</a>
+				</li>
 			</ul>
 			<a href="/features-documentation/">
 				<h4 class="sidebar-group-title">Product Features</h4>
 			</a>
 			<ul class="sidebar-group features-documentation" >
 				<li>
-					<a href="/features-documentation/">Onboarding</a>
+					<a href="/features-documentation/onboarding/">Onboarding</a>
 				</li>
 				<li>
 					<a href="/features-documentation/login/">Login</a>
 				</li>
 				<li>
 					<a href="/features-documentation/administration/">Administration</a>
+					<ul class="sidebar-group">
+						<li>
+							<a href="/features-documentation/register_org/">Register Organizations</a>
+						</li>
+						<li>
+							<a href="/features-documentation/register_user/">Register Users</a>
+						</li>
+					</ul>
 				</li>
 				<li>
 					<a href="/features-documentation/userrolepermission/">User Roles and Permissions</a>
@@ -149,234 +134,142 @@
 					<a href="/features-documentation/resources/">Resources</a>
 				</li>
 				<li>
-					<div class="">
-						<a href="/features-documentation/contentlifecycle/" class="sidebar-group-title">Content Lifecycle</a>
-						<ul class="sidebar-group">
-							<li>
-								<a href="/features-documentation/contentlifecycle/">Content Creation</a>
-							</li>
-							<li>
-								<a href="/features-documentation/review/">Review</a>
-							</li>
-							<li>
-								<a href="/features-documentation/publishing/">Publishing</a>
-							</li>
-						</ul>
-					</div>
+					<a href="/features-documentation/contentlifecycle/">Content Lifecycle</a>
+				</li>
+				<li>
+					<a href="/features-documentation/contentcreation/">Content Creation</a>
 				</li>
 				<li>
 					<a href="/features-documentation/contenteditor/">Content Editor</a>
 				</li>
+				</li>
 				<li>
 					<div class="">
-						<a href="/features-documentation/guidelines/" class="sidebar-group-title">Guidelines</a>
+						<a href="/features-documentation/guidelines/" >Guidelines</a>
 						<ul class="sidebar-group">
 							<li>
 								<a href="/features-documentation/intellectualproperty/">Intellectual Property</a>
 							</li>
-							<li>
-								<a href="/features-documentation/contentsubmission/">Content Submission</a>
-							</li>
-							<li>
-								<a href="/features-documentation/codesubmission/">Code Submission</a>
-							</li>
-							<li>
-								<a href="/features-documentation/review/">Review</a>
-							</li>
 						</ul>
 					</div>
 				</li>
-				<li>
-					<div class="">
-						<a href="/participate/">Participate</a>
-						<!--<ul class="sidebar-group">
-							<li>
-								<a href="/participate/">Participation Process</a>
-							</li>
-							<li>
-								<a href="#">Suggest Design</a>
-							</li>
-							<li>
-								<a href="#">Write Documentation</a>
-							</li>
-							<li>
-								<a href="#">Write Code</a>
-							</li>
-							<li>
-								<a href="#">Test</a>
-							</li>
-							<li>
-								<a href="#">Answer Questions</a>
-							</li>
-							<li>
-								<a href="#">Review</a>
-							</li>
-							<li>
-								<a href="#">Mentor</a>
-							</li>
-							<li>
-								<a href="#">Maintain</a>
-							</li>
-						</ul>-->
-					</div>
-				</li>
-				<li>
+				<!--<li>
 					<a href="/features-documentation/reportinganalytics/">Reporting and Analytics</a>
-				</li>
+				</li>-->
 				<li>
 					<a href="/features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
 				</li>
-				<li>
-					<a href="/features-documentation/supportedenvironment/">Supported Environments</a>
-				</li>
-			</ul>
-			<a href="/developer-docs/">
-				<h4 class="sidebar-group-title">Developer Documentation</h4>
-			</a>
-			<ul class="sidebar-group developer-docs">
-				<li>
-					<a href="/developer-docs/getting_started/">Getting Started</a>
-					<ul class="sidebar-group">
-						<li>
-							<a href="/developer-docs/getting_started/">Supported Environments</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="/developer-docs/hosting_sunbird/">Hosting Sunbird</a>
-				</li>
-				<li>
-					<div class="">
-						<a class="sidebar-group-title" href="/developer-docs/developer_install/">Installing Sunbird</a>
-						<ul class="sidebar-group">
-							<li>
-								<a href="/developer-docs/developer_install/#prerequisites">Prerequisites</a>
-							</li>
-							<!--<li>
-								<a href="/developer-docs/developer_install/#setup">Quick Installation</a>
-							</li>-->
-							<li>
-								<a href="/developer-docs/developer_install/#setup">Complete Installation Procedure</a>
-							</li>
-							<li>
-								<a href="/developer-docs/medium_scale_deploy/">Medium Scale Deployment</a>
-							</li>
-							<li>
-								<a href="/developer-docs/large_scale_deploy/">Large Scale Deployment</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<div class="">
-						<a class="sidebar-group-title" href="/developer-docs/extending_sunbird/">Extending Sunbird</a>
-						<!--<ul class="sidebar-group">
-							<li>
-								<a href="/developer-docs/extending_sunbird/">Overview</a>
-							</li>
-							<li>
-								<a href="/developer-docs/extending_sunbird/">Extension Points</a>
-							</li>
-							<li>
-								<a href="/developer-docs/extending_sunbird/">Extension Options</a>
-							</li>
-						</ul>-->
-					</div>
-				</li>
-				<li>
-					<div class="">
-						<a class="sidebar-group-title" href="/developer-docs/customize_sunbird/">Customizing Sunbird</a>
-						<!--<ul class="sidebar-group">
-							<li>
-								<a href="/developer-docs/customize_sunbird/#changing-the-look-and-feel">Changing the Look and Feel</a>
-							</li>
-						</ul>-->
-					</div>
-				</li>
-				<li>
-					<div class="">
-						<a class="sidebar-group-title" href="/apis/">API Reference</a>
-						<ul class="sidebar-group">
-							<li>
-								<a href="/developer-docs/api_ref/">Custom Javascript Plugins</a>
-							</li>
-							<li>
-								<a href="/apis/">Sunbird REST APIs</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<div class="">
-						<a class="sidebar-group-title">Code Contribution</a>
-						<!--<ul class="sidebar-group">
-							<li>
-								<a href="/developer-docs/code_contribute/">Overview</a>
-							</li>
-							<li>
-								<a href="/developer-docs/code_contribute/">Guidelines</a>
-							</li>
-							<li>
-								<a href="/developer-docs/code_contribute/">Contributor Roles</a>
-							</li>
-						</ul>-->
-					</div>
-				</li>
-			</ul>
-			<a href="/faqs/">
-				<h4 class="sidebar-group-title">Frequently asked questions</h4>
-			</a>
-			<ul class="sidebar-group faqs" >
-				<li>
-					<a href="/faqs/audience/">Audience</a>
-				</li>
-				<li>
-					<a href="/faqs/contentcreation/">Content Creation</a>
-				</li>
-				<li>
-					<a href="/faqs/content_format/">Content Format</a>
-				</li>
-				<li>
-					<a href="/faqs/content_repo/">Content Repo</a>
-				</li>
-				<li>
-					<a href="/faqs/contentreviews/">Content Review</a>
-				</li>
-				<li>
-					<a href="/faqs/content_types/">Content Types</a>
-				</li>
-				<li>
-					<a href="/faqs/content_upload/">Content Upload</a>
-				</li>
-				<li>
-					<a href="/faqs/feature/">Features</a>
-				</li>
-				<li>
-					<a href="/faqs/fixerrors/">Fix Errors</a>
-				</li>
-				<li>
-					<a href="/faqs/glossary/">Glossary</a>
-				</li>
-				<li>
-					<a href="/faqs/helpsupport/">Help Support</a>
-				</li>
-				<li>
-					<a href="/faqs/intellectual_propertylicensesstandards/">Intellectual Property Licenses Standards</a>
-				</li>
-				<li>
-					<a href="/faqs/registrationenrolment/">Registration Enrollment</a>
-				</li>
-				<li>
-					<a href="/faqs/signin/">Sign In</a>
-				</li>
-				<li>
-					<a href="/faqs/taxonomymetadataframework/">Taxonomy Meta Data Framework</a>
-				</li>
-				<li>
-					<a href="/faqs/user_rightspermissions/">Users Rights Permission</a>
-				</li>
-			</ul>
-		</div>
+				</ul>
+				<a href="/developer-docs/">
+					<h4 class="sidebar-group-title">Developer Documentation</h4>
+				</a>
+				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="/developer-docs/installation_overview/">Installation Overview</a>
+					</li>
+					<!--<li>
+						<a href="/developer-docs/hosting_sunbird/">Hosting Sunbird</a>
+					</li>-->
+					<li>
+						<a  href="/developer-docs/developer_install/">Install Sunbird on Laptop</a>
+					</li>
+					<li>
+						<a href="/developer-docs/medium_scale_deploy/">Medium Scale Deployment</a>
+					</li>
+					<!--<li>
+						<div class="">
+							<a class="sidebar-group-title" href="/developer-docs/extending_sunbird/">Extending Sunbird</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a class="sidebar-group-title" href="/developer-docs/customize_sunbird/">Customizing Sunbird</a>
+						</div>
+					</li>-->
+					<li>
+						<div class="">
+							<a  href="/apis/">API Reference</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="/apis/bulkupload/" target="_blank">Bulk Upload Service APIs</a>
+								</li>
+								<li>
+									<a href="/apis/content/" target="_blank">Content APIs</a>
+								</li>
+								<li>
+									<a href="/apis/coursebatchmanapi/" target="_blank">Course Batch Management APIs</a>
+								</li>
+								<li>
+									<a href="/apis/datasyncapi/" target="_blank">Data Sync APIs</a>
+								</li>
+								<li>
+									<a href="/apis/metricsapi/" target="_blank">Metrics APIs</a>
+								</li>
+								<li>
+									<a href="/apis/notificationapi/" target="_blank">Notification  APIs</a>
+								</li>
+								<li>
+									<a href="/apis/orgapi/" target="_blank">Organisation Management APIs</a>
+								</li>
+								<li>
+									<a href="/apis/userapi/" target="_blank">User APIs</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</div>
+			</li>
+		</ul>
+		<a href="/faqs/">
+			<h4 class="sidebar-group-title">Frequently asked questions</h4>
+		</a>
+		<ul class="sidebar-group faqs" >
+			<li>
+				<a href="/faqs/audience/">Audience</a>
+			</li>
+			<li>
+				<a href="/faqs/content_format/">Content Format</a>
+			</li>
+			<li>
+				<a href="/faqs/content_repo/">Content Repo</a>
+			</li>
+			<li>
+				<a href="/faqs/contentreviews/">Content Review</a>
+			</li>
+			<li>
+				<a href="/faqs/content_types/">Content Types</a>
+			</li>
+			<li>
+				<a href="/faqs/content_upload/">Content Upload</a>
+			</li>
+			<li>
+				<a href="/faqs/feature/">Features</a>
+			</li>
+			<li>
+				<a href="/faqs/fixerrors/">Fix Errors</a>
+			</li>
+			<li>
+				<a href="/faqs/helpsupport/">Help Support</a>
+			</li>
+			<li>
+				<a href="/faqs/intellectual_propertylicensesstandards/">Intellectual Property Licenses Standards</a>
+			</li>
+			<li>
+				<a href="/faqs/registrationenrolment/">Registration and Enrollment</a>
+			</li>
+			<li>
+				<a href="/faqs/signin/">Sign In</a>
+			</li>
+			<li>
+				<a href="/faqs/taxonomymetadataframework/">Taxonomy Meta Data Framework</a>
+			</li>
+			<li>
+				<a href="/faqs/user_rightspermissions/">Users Rights and Permission</a>
+			</li>
+		</ul>
+		<a href="/faqs/glossary/">
+			<h4 class="sidebar-group-title">Glossary</h4>
+		</a>
 	</div>
 </div>
 <script>
@@ -384,25 +277,16 @@ $("a[href$='/developer-docs/medium_scale_deploy/']").addClass("sidebar-link-sele
 </script>
 
       </div>
-     <!-- <div class="inner__supportbar">
-        <a href="#">Help & Support</a>
-      </div>-->
     </nav>
     <div class="content">
       <div class="inner__content header">
-
         <h1>Medium Scale Deployment </h1>
-
-        
-          <span class="hide-selector"><script type="text/javascript">$(function() { React.render(React.createElement(SectionSelector, {current_path: "developer-docs/medium_scale_deploy", site_map: {"marketing-channels":{},"cross-channel-analytics":{},"data-exchange":{},"basic-setup":{},"next-steps":{},"github-sdks":{},"getting-started":{},"other":{}}, sections: [{"key":"overview","name":"Overview"},{"key":"guide","name":"Guide"},{"key":"support","name":"Support"},{"key":"advanced","name":"Advanced"},{"key":"examples","name":"Examples"}], platforms: {}, url_section: ""}), $("#pahdi25b7y")[0]); });</script><div id="pahdi25b7y"><div class="section-selector" data-reactid=".wyczcn5flo" data-react-checksum="-1280043599"><div class="section-group" data-reactid=".wyczcn5flo.0"><a class="section section-inactive" href="/developer-docs/medium_scale_deploy/" data-reactid=".wyczcn5flo.0.$overview">Overview</a><a class="section section-inactive" href="/developer-docs/medium_scale_deploy//" data-reactid=".wyczcn5flo.0.$guide">Guide</a><a class="section section-inactive" href="/developer-docs/medium_scale_deploy//" data-reactid=".wyczcn5flo.0.$support">Support</a><a class="section section-inactive" href="/developer-docs/medium_scale_deploy//" data-reactid=".wyczcn5flo.0.$advanced">Advanced</a><a class="section section-inactive" href="/developer-docs/medium_scale_deploy//" data-reactid=".wyczcn5flo.0.$examples">Examples</a></div></div></div></span>
-        
       </div>
 
-      
-
       <div id="main-content" class="inner__content">
-        
-          <h1 id="pre-requisites">Pre-requisites</h1>
+          <h2 id="medium-scale-deployment">Medium Scale Deployment</h2>
+
+<p><strong>Pre-requisites</strong></p>
 
 <p>You will need servers with the following minimum system requirements:</p>
 
@@ -413,25 +297,32 @@ $("a[href$='/developer-docs/medium_scale_deploy/']").addClass("sidebar-link-sele
   <li>root access (should be able to sudo)</li>
 </ul>
 
-<h1 id="variables-relevant-to-deployment">Variables relevant to deployment</h1>
+<p><strong>Variables relevant to deployment</strong></p>
 
 <ul>
-  <li><strong>implementation-name</strong> - Name of your sunbird implementation. Let’s say for the sake of this document, it is <code>ntp</code>. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.</li>
-  <li><strong>environment-name</strong> - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a <code>production</code> environment.</li>
+  <li><strong>Implementation-name</strong> - Name of your sunbird implementation. Let’s say for the sake of this document, it is <code>ntp</code>. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.</li>
+  <li><strong>Environment-name</strong> - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a <code>production</code> environment.</li>
 </ul>
 
-<h1 id="step-1-provisioning-your-servers">Step 1: Provisioning your servers</h1>
-<p>For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.
-## Automated
-The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.
-### Automation for Azure
-<strong>Run Time</strong>: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.</p>
+<p><strong>Provisioning your servers</strong></p>
+
+<p>For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.</p>
+
+<p><strong>Automated</strong></p>
+
+<p>The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.</p>
+
+<p><strong>Automation for Azure</strong></p>
+
+<ul>
+  <li><strong>Run Time</strong>: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.</li>
+</ul>
 
 <p>Run the following steps from a machine which is connected to the internet:</p>
 
 <ul>
   <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
-  <li>Run <code>./sunbird-devops/deploy/generate-config.sh ntp production cloud</code> This will create config files for you in <code>./ntp-devops/test/azure</code>. Here, <code>ntp</code> is the <strong>implementation-name</strong> and <code>production</code> is the <strong>environment-name</strong>.</li>
+  <li>Run <code>./sunbird-devops/deploy/generate-config.sh ntp production cloud</code> This will create config files for you in <code>./ntp-devops/test/azure</code>. Here, <code>ntp</code> is the implementation-name and <code>production</code> is the environment-name.</li>
   <li>Edit BOTH the new config files <code>azuredeploy.parameters.json</code> and <code>env.sh</code> as per your requirements for the app.</li>
   <li>Edit the new config files <code>azuredeploy.parameters.json</code> and <code>env.sh</code> as per your requirements for the db.</li>
   <li>Run <code>export APP_DEPLOYMENT_JSON_PATH=&lt;absolute path of azuredeploy.parameters.json&gt;</code>. For instance, on my laptop it is <code>export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/ntp-devops/production/azure/app</code></li>
@@ -445,18 +336,22 @@ The following set of scripts create the network and servers needed to run Sunbir
   <li>If you could SSH, you have successfully created the server platform.</li>
 </ul>
 
-<h4 id="automation-walkthrough">Automation walkthrough</h4>
+<p><strong>Automation walkthrough</strong></p>
 
 <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif">Part 1</a></p>
 
 <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif">Part 2</a></p>
 
-<h3 id="others">Others</h3>
-<p>Not automated as of now but you are free to contribute back! Send in a PR.
-## Manual
-Get 2 servers and prepare to get your hands dirty when needed. 1st server would serve as the DB server and the 2nd, the application server plus the administration server. Note that the default automation creates 3 servers because it separates the application and the administration server.</p>
+<p><strong>Others</strong></p>
 
-<h1 id="step-2-setup-your-dbs">Step 2: Setup your DBs</h1>
+<p>Not automated as of now but you are free to contribute back! Send in a PR.</p>
+
+<p><strong>Manual</strong></p>
+
+<p>Get 2 servers and prepare to get your hands dirty when needed. 1st server would serve as the DB server and the 2nd, the application server plus the administration server. Note that the default automation creates 3 servers because it separates the application and the administration server.</p>
+
+<p><strong>Setup your DBs</strong></p>
+
 <p>You are free to either use existing DBs, create DBs manually or run the following automation scripts to create them. The DBs Sunbird uses are:</p>
 
 <ul>
@@ -466,42 +361,48 @@ Get 2 servers and prepare to get your hands dirty when needed. 1st server would 
   <li>Elasticsearch</li>
 </ul>
 
-<h2 id="preparation">Preparation</h2>
+<p><strong>Preparation</strong></p>
+
 <p>Run the following steps starting from your local machine:</p>
 
 <ul>
   <li>SSH into the <code>db-server</code>. If you have not edited the default configuration, then the name of the DB VM would be <code>db-1</code>. Automated setup does not expose the DB to the Internet, so to SSH into the DB, you will need to SSH to <code>vm-1</code> (check out <code>masterFQDN</code> above) with <code>ssh -A</code> (key forwarding) and then SSH to <code>db-1</code>.</li>
   <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
-  <li>Run <code>./sunbird-devops/deploy/generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt;</code>. Example <code>./sunbird-devops/deploy/generate-config.sh ntp production deploy</code>. This creates <code>ntp-devops</code> directory with <em>incomplete</em> configurations. You <strong>WILL</strong> need to supply missing configuration.</li>
+  <li>Run <code>./sunbird-devops/deploy/generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt;</code>. Example <code>./sunbird-devops/deploy/generate-config.sh ntp production deploy</code>. This creates <code>ntp-devops</code> directory with <em>incomplete</em> configurations. You WILL need to supply missing configuration.</li>
   <li>Modify all the configurations under <code># DB CONFIGURATION</code> block in <code>&lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;/group_vars/&lt;environment-name&gt;</code></li>
 </ul>
 
-<h2 id="db-creation">DB creation</h2>
-
-<h3 id="via-automation">Via automation</h3>
-<p><strong>Run Time</strong>: 15-30 mins to prepare and 30 mins to complete.
-Following is a set of scripts which install the DBs into the <code>db-server</code> and copy over <code>master</code> data.</p>
+<p><strong>DB creation via automation</strong></p>
 
 <ul>
+  <li>
+    <p><strong>Run Time</strong>: 15-30 mins to prepare and 30 mins to complete.
+Following is a set of scripts which install the DBs into the <code>db-server</code> and copy over <code>master</code> data.</p>
+  </li>
   <li>Run <code>cd sunbird-devops/deploy</code></li>
   <li>Run <code>sudo ./install-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.</li>
 </ul>
 
-<h3 id="manual">Manual</h3>
+<p><strong>Manual</strong></p>
+
 <p>Refer to DB user guides.</p>
 
-<h4 id="automation-walkthrough-1">Automation Walkthrough</h4>
+<p><strong>Automation Walkthrough</strong></p>
+
 <p>Included in the next demo</p>
 
-<h1 id="step-3-initialize-dbs">Step 3: Initialize DBs</h1>
+<p><strong>Initialize DBs</strong></p>
+
 <ul>
   <li>Run <code>sudo ./init-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code> to initialize the DB.</li>
 </ul>
 
-<h4 id="automation-walkthrough-2">Automation Walkthrough</h4>
+<p><strong>Automation Walkthrough</strong></p>
+
 <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif">Part 4</a></p>
 
-<h1 id="step-4-setup-application-and-core-services">Step 4: Setup Application and Core services</h1>
+<p><strong>Setup Application and Core services</strong></p>
+
 <ul>
   <li>SSH into <code>admin-server</code>. If you have used automated scripts used here, then this server would be <code>vm-1</code>.</li>
   <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
@@ -522,7 +423,8 @@ Following is a set of scripts which install the DBs into the <code>db-server</co
 
     <blockquote>
       <p>changed: [localhost] =&gt; {“changed”: true, “cmd”: “python /tmp/kong-api-scripts/kong_consumers.py
-/tmp/kong_consumers.json ……. “<strong>JWT token for player is :</strong>
+/tmp/kong_consumers.json ……. 
+“<strong>JWT token for player is :</strong>
 <em>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro</em>”, “Updating rate_limit for consumer player for API cr……”]}</p>
     </blockquote>
   </li>
@@ -537,37 +439,45 @@ Following is a set of scripts which install the DBs into the <code>db-server</co
 </ul>
 
 <p>```yml
-# Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
+Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
 sunbird_sso_password: # keycloak user password</p>
 
-<h1 id="login-to-the-keycloak-admin-console-goto-the-clients-portal-installation-select-json-format">Login to the keycloak admin console, goto the clients-&gt;portal-&gt;Installation-&gt;Select json format</h1>
-<p>keycloak_realm:  # Eg: sunbird
+<p>Login to the keycloak admin console, goto the clients-&gt;portal-&gt;Installation-&gt;Select json format
+keycloak_realm:  # Eg: sunbird
 sunbird_keycloak_client_id: # Eg: portal</p>
 
-<h1 id="login-to-the-keycloak-admin-console-goto-the-clients-trampoline-installation-select-json-format">Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format</h1>
-<p>sunbird_trampoline_client_id:  # Eg: trampoline
+<p>Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format
+sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 ```</p>
 
 <ul>
-  <li>Run <code>sudo ./deploy-core.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will setup all the sunbird core services.</li>
-  <li>Run <code>sudo ./deploy-proxy.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will setup sunbird proxy services.</li>
+  <li>Run <code>sudo ./deploy-core.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</li>
 </ul>
 
-<h1 id="automation-walkthrough-3">Automation Walkthrough</h1>
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif">Part 5</a>
-<a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif">Part 6</a>
-<a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif">Part 7</a></p>
+<p>This will setup all the sunbird core services.
+- Run <code>sudo ./deploy-proxy.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</p>
 
-<h1 id="step-4-check-installation">Step 4: Check Installation</h1>
+<p>This will setup sunbird proxy services.</p>
+
+<p><strong>Automation Walkthrough</strong></p>
+
+<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif">Part 5</a></p>
+
+<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif">Part 6</a></p>
+
+<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif">Part 7</a></p>
+
+<p><strong>Check Installation</strong></p>
 
 <ul>
   <li>Browse Sunbird Portal by accessing https://{proxy_server_name}/ (publicly accessible URL, it could be the load balancer URL or the actual domain name for production).</li>
 </ul>
 
-<h1 id="step-5-upgrade-with-a-new-version-of-sunbird">Step 5: Upgrade with a new version of Sunbird</h1>
+<p><strong>Upgrade with a new version of Sunbird</strong></p>
+
 <p>To update/redeploy sunbird please follow these steps:</p>
 
 <ul>
@@ -576,34 +486,45 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
   <li>Run <code>cd sunbird-devops/deploy</code></li>
   <li>Run <code>sudo ./deploy-apis.sh /ansible/inventories/</code>. This will onboard various APIs and consumer groups.</li>
   <li>Run <code>sudo ./deploy-core.sh /ansible/inventories/</code>. This will setup all the sunbird core services.</li>
-  <li>Run <code>sudo ./deploy-proxy.sh /ansible/inventories/</code>. This will setup sunbird proxy services.</li>
+  <li>Run <code>sudo ./deploy-proxy.sh /ansible/inventories/</code>. This will setup sunbird proxy services.
+.</li>
 </ul>
 
-<p>.</p>
-
-        
       </div>
     </div>
+    <div class="page-footer">
+		<footer class="footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="row">
+				
+			<div class="col-md-4 col-sm-12">
+			</div>
+			
+			<div class="col-md-2 col-sm-6 ">
+				<ul>
+					<li><a href="/about/">About Sunbird</a></li>
+					<li><a href="/contact/">Contact Us</a></li>
+					<li><a href="/privacy-policy/">Privacy Policy</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-2 col-sm-6 sideline">
+				<ul>
+					<li><a href="/docs/">Documentation</a></li>
+					<li><a href="/features/">Features</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-2 col-sm-12">
+			</div>
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
   </div>
-
-  <script>
-    var platformSelector = $("#platform-selector");
-    var mainContent = $("#main-content");
-
-    $(".content").scroll(function() {
-
-      if (this.scrollTop > 264) {
-        platformSelector.addClass("fixed");
-        mainContent.addClass("no-selector");
-      }
-      else {
-        platformSelector.removeClass("fixed");
-        mainContent.removeClass("no-selector");
-      }
-
-    });
-  </script>
-
   <script type="text/javascript">
 
       $(document).ready(function(){
@@ -620,7 +541,5 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
       });
 
   </script>
-
   </body>
-
 </html>

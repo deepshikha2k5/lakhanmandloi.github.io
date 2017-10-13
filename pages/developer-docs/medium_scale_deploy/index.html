@@ -1,4 +1,6 @@
-<h1 id="pre-requisites">Pre-requisites</h1>
+<h2 id="medium-scale-deployment">Medium Scale Deployment</h2>
+
+<p><strong>Pre-requisites</strong></p>
 
 <p>You will need servers with the following minimum system requirements:</p>
 
@@ -9,25 +11,32 @@
   <li>root access (should be able to sudo)</li>
 </ul>
 
-<h1 id="variables-relevant-to-deployment">Variables relevant to deployment</h1>
+<p><strong>Variables relevant to deployment</strong></p>
 
 <ul>
-  <li><strong>implementation-name</strong> - Name of your sunbird implementation. Let’s say for the sake of this document, it is <code>ntp</code>. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.</li>
-  <li><strong>environment-name</strong> - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a <code>production</code> environment.</li>
+  <li><strong>Implementation-name</strong> - Name of your sunbird implementation. Let’s say for the sake of this document, it is <code>ntp</code>. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.</li>
+  <li><strong>Environment-name</strong> - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a <code>production</code> environment.</li>
 </ul>
 
-<h1 id="step-1-provisioning-your-servers">Step 1: Provisioning your servers</h1>
-<p>For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.
-## Automated
-The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.
-### Automation for Azure
-<strong>Run Time</strong>: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.</p>
+<p><strong>Provisioning your servers</strong></p>
+
+<p>For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.</p>
+
+<p><strong>Automated</strong></p>
+
+<p>The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.</p>
+
+<p><strong>Automation for Azure</strong></p>
+
+<ul>
+  <li><strong>Run Time</strong>: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.</li>
+</ul>
 
 <p>Run the following steps from a machine which is connected to the internet:</p>
 
 <ul>
   <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
-  <li>Run <code>./sunbird-devops/deploy/generate-config.sh ntp production cloud</code> This will create config files for you in <code>./ntp-devops/test/azure</code>. Here, <code>ntp</code> is the <strong>implementation-name</strong> and <code>production</code> is the <strong>environment-name</strong>.</li>
+  <li>Run <code>./sunbird-devops/deploy/generate-config.sh ntp production cloud</code> This will create config files for you in <code>./ntp-devops/test/azure</code>. Here, <code>ntp</code> is the implementation-name and <code>production</code> is the environment-name.</li>
   <li>Edit BOTH the new config files <code>azuredeploy.parameters.json</code> and <code>env.sh</code> as per your requirements for the app.</li>
   <li>Edit the new config files <code>azuredeploy.parameters.json</code> and <code>env.sh</code> as per your requirements for the db.</li>
   <li>Run <code>export APP_DEPLOYMENT_JSON_PATH=&lt;absolute path of azuredeploy.parameters.json&gt;</code>. For instance, on my laptop it is <code>export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/ntp-devops/production/azure/app</code></li>
@@ -41,18 +50,22 @@ The following set of scripts create the network and servers needed to run Sunbir
   <li>If you could SSH, you have successfully created the server platform.</li>
 </ul>
 
-<h4 id="automation-walkthrough">Automation walkthrough</h4>
+<p><strong>Automation walkthrough</strong></p>
 
 <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif">Part 1</a></p>
 
 <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif">Part 2</a></p>
 
-<h3 id="others">Others</h3>
-<p>Not automated as of now but you are free to contribute back! Send in a PR.
-## Manual
-Get 2 servers and prepare to get your hands dirty when needed. 1st server would serve as the DB server and the 2nd, the application server plus the administration server. Note that the default automation creates 3 servers because it separates the application and the administration server.</p>
+<p><strong>Others</strong></p>
 
-<h1 id="step-2-setup-your-dbs">Step 2: Setup your DBs</h1>
+<p>Not automated as of now but you are free to contribute back! Send in a PR.</p>
+
+<p><strong>Manual</strong></p>
+
+<p>Get 2 servers and prepare to get your hands dirty when needed. 1st server would serve as the DB server and the 2nd, the application server plus the administration server. Note that the default automation creates 3 servers because it separates the application and the administration server.</p>
+
+<p><strong>Setup your DBs</strong></p>
+
 <p>You are free to either use existing DBs, create DBs manually or run the following automation scripts to create them. The DBs Sunbird uses are:</p>
 
 <ul>
@@ -62,42 +75,48 @@ Get 2 servers and prepare to get your hands dirty when needed. 1st server would 
   <li>Elasticsearch</li>
 </ul>
 
-<h2 id="preparation">Preparation</h2>
+<p><strong>Preparation</strong></p>
+
 <p>Run the following steps starting from your local machine:</p>
 
 <ul>
   <li>SSH into the <code>db-server</code>. If you have not edited the default configuration, then the name of the DB VM would be <code>db-1</code>. Automated setup does not expose the DB to the Internet, so to SSH into the DB, you will need to SSH to <code>vm-1</code> (check out <code>masterFQDN</code> above) with <code>ssh -A</code> (key forwarding) and then SSH to <code>db-1</code>.</li>
   <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
-  <li>Run <code>./sunbird-devops/deploy/generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt;</code>. Example <code>./sunbird-devops/deploy/generate-config.sh ntp production deploy</code>. This creates <code>ntp-devops</code> directory with <em>incomplete</em> configurations. You <strong>WILL</strong> need to supply missing configuration.</li>
+  <li>Run <code>./sunbird-devops/deploy/generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt;</code>. Example <code>./sunbird-devops/deploy/generate-config.sh ntp production deploy</code>. This creates <code>ntp-devops</code> directory with <em>incomplete</em> configurations. You WILL need to supply missing configuration.</li>
   <li>Modify all the configurations under <code># DB CONFIGURATION</code> block in <code>&lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;/group_vars/&lt;environment-name&gt;</code></li>
 </ul>
 
-<h2 id="db-creation">DB creation</h2>
-
-<h3 id="via-automation">Via automation</h3>
-<p><strong>Run Time</strong>: 15-30 mins to prepare and 30 mins to complete.
-Following is a set of scripts which install the DBs into the <code>db-server</code> and copy over <code>master</code> data.</p>
+<p><strong>DB creation via automation</strong></p>
 
 <ul>
+  <li>
+    <p><strong>Run Time</strong>: 15-30 mins to prepare and 30 mins to complete.
+Following is a set of scripts which install the DBs into the <code>db-server</code> and copy over <code>master</code> data.</p>
+  </li>
   <li>Run <code>cd sunbird-devops/deploy</code></li>
   <li>Run <code>sudo ./install-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.</li>
 </ul>
 
-<h3 id="manual">Manual</h3>
+<p><strong>Manual</strong></p>
+
 <p>Refer to DB user guides.</p>
 
-<h4 id="automation-walkthrough-1">Automation Walkthrough</h4>
+<p><strong>Automation Walkthrough</strong></p>
+
 <p>Included in the next demo</p>
 
-<h1 id="step-3-initialize-dbs">Step 3: Initialize DBs</h1>
+<p><strong>Initialize DBs</strong></p>
+
 <ul>
   <li>Run <code>sudo ./init-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code> to initialize the DB.</li>
 </ul>
 
-<h4 id="automation-walkthrough-2">Automation Walkthrough</h4>
+<p><strong>Automation Walkthrough</strong></p>
+
 <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif">Part 4</a></p>
 
-<h1 id="step-4-setup-application-and-core-services">Step 4: Setup Application and Core services</h1>
+<p><strong>Setup Application and Core services</strong></p>
+
 <ul>
   <li>SSH into <code>admin-server</code>. If you have used automated scripts used here, then this server would be <code>vm-1</code>.</li>
   <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
@@ -118,7 +137,8 @@ Following is a set of scripts which install the DBs into the <code>db-server</co
 
     <blockquote>
       <p>changed: [localhost] =&gt; {“changed”: true, “cmd”: “python /tmp/kong-api-scripts/kong_consumers.py
-/tmp/kong_consumers.json ……. “<strong>JWT token for player is :</strong>
+/tmp/kong_consumers.json ……. 
+“<strong>JWT token for player is :</strong>
 <em>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro</em>”, “Updating rate_limit for consumer player for API cr……”]}</p>
     </blockquote>
   </li>
@@ -133,37 +153,45 @@ Following is a set of scripts which install the DBs into the <code>db-server</co
 </ul>
 
 <p>```yml
-# Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
+Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
 sunbird_sso_password: # keycloak user password</p>
 
-<h1 id="login-to-the-keycloak-admin-console-goto-the-clients-portal-installation-select-json-format">Login to the keycloak admin console, goto the clients-&gt;portal-&gt;Installation-&gt;Select json format</h1>
-<p>keycloak_realm:  # Eg: sunbird
+<p>Login to the keycloak admin console, goto the clients-&gt;portal-&gt;Installation-&gt;Select json format
+keycloak_realm:  # Eg: sunbird
 sunbird_keycloak_client_id: # Eg: portal</p>
 
-<h1 id="login-to-the-keycloak-admin-console-goto-the-clients-trampoline-installation-select-json-format">Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format</h1>
-<p>sunbird_trampoline_client_id:  # Eg: trampoline
+<p>Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format
+sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 ```</p>
 
 <ul>
-  <li>Run <code>sudo ./deploy-core.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will setup all the sunbird core services.</li>
-  <li>Run <code>sudo ./deploy-proxy.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will setup sunbird proxy services.</li>
+  <li>Run <code>sudo ./deploy-core.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</li>
 </ul>
 
-<h1 id="automation-walkthrough-3">Automation Walkthrough</h1>
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif">Part 5</a>
-<a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif">Part 6</a>
-<a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif">Part 7</a></p>
+<p>This will setup all the sunbird core services.
+- Run <code>sudo ./deploy-proxy.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</p>
 
-<h1 id="step-4-check-installation">Step 4: Check Installation</h1>
+<p>This will setup sunbird proxy services.</p>
+
+<p><strong>Automation Walkthrough</strong></p>
+
+<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif">Part 5</a></p>
+
+<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif">Part 6</a></p>
+
+<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif">Part 7</a></p>
+
+<p><strong>Check Installation</strong></p>
 
 <ul>
   <li>Browse Sunbird Portal by accessing https://{proxy_server_name}/ (publicly accessible URL, it could be the load balancer URL or the actual domain name for production).</li>
 </ul>
 
-<h1 id="step-5-upgrade-with-a-new-version-of-sunbird">Step 5: Upgrade with a new version of Sunbird</h1>
+<p><strong>Upgrade with a new version of Sunbird</strong></p>
+
 <p>To update/redeploy sunbird please follow these steps:</p>
 
 <ul>
@@ -172,7 +200,6 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
   <li>Run <code>cd sunbird-devops/deploy</code></li>
   <li>Run <code>sudo ./deploy-apis.sh /ansible/inventories/</code>. This will onboard various APIs and consumer groups.</li>
   <li>Run <code>sudo ./deploy-core.sh /ansible/inventories/</code>. This will setup all the sunbird core services.</li>
-  <li>Run <code>sudo ./deploy-proxy.sh /ansible/inventories/</code>. This will setup sunbird proxy services.</li>
+  <li>Run <code>sudo ./deploy-proxy.sh /ansible/inventories/</code>. This will setup sunbird proxy services.
+.</li>
 </ul>
-
-<p>.</p>
