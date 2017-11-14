@@ -31,7 +31,7 @@ jobs:
       # Add SSH Key   
       - add_ssh_keys:
           fingerprints:
-            - "fa:30:b3:04:87:9f:18:7b:64:47:2f:33:c9:8c:23:7f"
+            - "c3:11:0a:22:15:51:43:8f:70:b8:76:5a:5a:59:07:49"
       #Add User
       - type: shell
         command: |
@@ -76,8 +76,6 @@ workflows:
             branches:
               ignore: /.*/
       - prod:
-          filters:
-            tags:
-              only: /^prod.*/
-            branches:
-              ignore: /.*/
+          type: approval
+          requires:
+              - staging
