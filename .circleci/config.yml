@@ -13,11 +13,11 @@ jobs:
       - type: shell
         command: |
           bundle exec jekyll build
-   
       # Deploy to s3 bucket
       - type: shell
         command: |
-           pwd
+           cd _site
+           aws s3 sync --delete . s3://sunbird-review/$CIRCLE_BUILD_NUM
            
   staging:
     working_directory: /project/workplace/
@@ -32,11 +32,11 @@ jobs:
       - type: shell
         command: |
           bundle exec jekyll build
-   
+          
       # Deploy to s3 bucket
       - type: shell
         command: |
-           bundle exec s3_website push
+           aws s3 sync --delete _site/* s3://sunbird-trial/$CIRCLE_TAG
           
   prod:
     working_directory: /project/workspace/
