@@ -77,7 +77,7 @@ workflows:
               ignore: /.*/
       -hold:
           type: approval
-		  requires:
+          requires:
               - staging
       - prod:
           requires:
