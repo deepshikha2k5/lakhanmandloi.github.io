@@ -91,7 +91,8 @@ workflows:
       - review:
           filters:
             branches:
-              ignore: /.*/
+              only:
+                - dev
       - staging:
           filters:
             tags:
