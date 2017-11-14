@@ -70,19 +70,10 @@ workflows:
   build_and_deploy:
     jobs:
       - staging:
-          filters:
-            branches:
-              only: /^dev.*/
       - hold:
           type: approval
           requires:
               - staging
-          filters:
-            branches:
-              only: /^dev.*/
       - prod:
           requires:
               - hold
-          filters:
-            branches:
-              only: /^dev.*/
