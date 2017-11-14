@@ -1,0 +1,83 @@
+version: 2
+jobs:
+  staging:
+    working_directory: /project/workplace/
+    docker:
+      - image: lakhanmandloi/sunbird-ubuntu-full
+    steps:
+    
+      #Checkout
+      - checkout
+            
+      # Run Build command
+      - type: shell
+        command: |
+          bundle exec jekyll build
+   
+      # Deploy to Gitpages
+      - type: shell
+        command: |
+           bundle exec s3_website push
+          
+  prod:
+    working_directory: /project/workspace/
+    docker:
+      - image: lakhanmandloi/sunbird-ubuntu-full
+    steps:
+      
+      #Checkout
+      - checkout
+          
+      # Add SSH Key   
+      - add_ssh_keys:
+          fingerprints:
+            - "fa:30:b3:04:87:9f:18:7b:64:47:2f:33:c9:8c:23:7f"
+      #Add User
+      - type: shell
+        command: |
+          git config --global user.email "lakhan_m@tekditechnologies.com"
+          git config --global user.name "Lakhan Mandloi"
+      
+      # Pull Code from staging site
+      - type: shell
+        command: |
+          cd ..
+          mkdir downloads
+          cd downloads
+          aws s3 sync --delete s3://sunbird-trail/ .
+           
+      # Deploy to Gitpages
+      - type: shell
+        command: |
+          cd ..
+          mkdir deploy
+          cd deploy
+          git clone git@github.com:lakhanmandloi/lakhanmandloi.github.io.git
+          cd lakhanmandloi.github.io.git
+          git checkout master
+          cp -R .git/ ../
+          rm -rf *
+          cd ..
+          cp -R ../downloads/* lakhanmandloi.github.io.git/
+          cp -R .git/ lakhanmandloi.github.io.git/
+          cd lakhanmandloi.github.io.git/
+          git add -A
+          git commit -m "$CIRCLE_TAG"
+          git push origin master
+          
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - staging:
+          filters:
+            tags:
+              only: /^dev.*/
+            branches:
+              ignore: /.*/
+      - prod:
+          filters:
+            tags:
+              only: /^prod.*/
+            branches:
+              ignore: /.*/
