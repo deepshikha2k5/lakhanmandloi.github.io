@@ -1,6 +1,6 @@
 s3_id: <%= ENV['TEST_ID'] %>
 s3_secret: <%= ENV['TEST_SECRET'] %>
-s3_bucket: sunbird-trail
+s3_bucket: sunbird-trial
 s3_endpoint: ap-south-1
 
 
