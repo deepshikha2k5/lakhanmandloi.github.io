@@ -44,7 +44,7 @@ jobs:
           cd ..
           mkdir downloads
           cd downloads
-          aws s3 sync --delete s3://sunbird-trail/ .
+          aws s3 sync --delete s3://sunbird-trial/ .
            
       # Deploy to Gitpages
       - type: shell
