@@ -74,7 +74,8 @@ workflows:
             tags:
               only: /^dev.*/
             branches:
-              ignore: /.*/
+              only: 
+                - dev
       - hold:
           type: approval
           requires:
@@ -83,7 +84,8 @@ workflows:
             tags:
               only: /^dev.*/
             branches:
-              ignore: /.*/
+              only: 
+                - dev
       - prod:
           requires:
               - hold
@@ -91,4 +93,5 @@ workflows:
             tags:
               only: /^dev.*/
             branches:
-              ignore: /.*/
+              only: 
+                - dev
