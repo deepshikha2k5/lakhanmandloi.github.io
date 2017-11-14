@@ -79,7 +79,8 @@ workflows:
           type: approval
           requires:
               - staging
-          tags:
-              only: /^prod.*/
+          filters:
+            tags:
+              only: /^dev.*/
             branches:
               ignore: /.*/
