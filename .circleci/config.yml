@@ -17,6 +17,7 @@ jobs:
       # Deploy to s3 bucket
       - type: shell
         command: |
+           pwd
            bundle exec s3_website push --config-dir review
            
   staging:
