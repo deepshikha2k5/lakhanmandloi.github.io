@@ -18,7 +18,6 @@ jobs:
       - type: shell
         command: |
            pwd
-           bundle exec s3_website push --config-dir review
            
   staging:
     working_directory: /project/workplace/
