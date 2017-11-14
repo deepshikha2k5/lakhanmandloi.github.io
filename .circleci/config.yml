@@ -75,7 +75,7 @@ workflows:
               only: /^dev.*/
             branches:
               ignore: /.*/
-      -hold:
+      - hold:
           type: approval
           requires:
               - staging
