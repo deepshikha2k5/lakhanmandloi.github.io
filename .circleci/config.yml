@@ -53,14 +53,14 @@ jobs:
           mkdir deploy
           cd deploy
           git clone git@github.com:lakhanmandloi/lakhanmandloi.github.io.git
-          cd lakhanmandloi.github.io.git
+          cd lakhanmandloi.github.io
           git checkout master
           cp -R .git/ ../
           rm -rf *
           cd ..
-          cp -R ../downloads/* lakhanmandloi.github.io.git/
-          cp -R .git/ lakhanmandloi.github.io.git/
-          cd lakhanmandloi.github.io.git/
+          cp -R ../downloads/* lakhanmandloi.github.io/
+          cp -R .git/ lakhanmandloi.github.io/
+          cd lakhanmandloi.github.io/
           git add -A
           git commit -m "$CIRCLE_TAG"
           git push origin master
