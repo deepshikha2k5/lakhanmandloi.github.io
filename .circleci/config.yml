@@ -18,7 +18,6 @@ jobs:
       - type: shell
         command: |
            bundle exec s3_website push
-           ls
           
   prod:
     working_directory: /project/workspace/
@@ -72,24 +71,18 @@ workflows:
     jobs:
       - staging:
           filters:
-            tags:
-              only: /^dev.*/
             branches:
-              ignore: /.*/
+              only: /^dev.*/
       - hold:
           type: approval
           requires:
               - staging
           filters:
-            tags:
-              only: /^dev.*/
             branches:
-              ignore: /.*/
+              only: /^dev.*/
       - prod:
           requires:
               - hold
           filters:
-            tags:
-              only: /^dev.*/
             branches:
-              ignore: /.*/
+              only: /^dev.*/
