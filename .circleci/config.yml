@@ -89,7 +89,7 @@ workflows:
   build_and_deploy:
     jobs:
       - review
-      - staging
+      - staging:
           filters:
             tags:
               only: /^dev.*/
