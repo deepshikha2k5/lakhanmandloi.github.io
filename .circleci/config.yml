@@ -1,5 +1,24 @@
 version: 2
 jobs:
+  review:
+    working_directory: /project/workplace/
+    docker:
+      - image: lakhanmandloi/sunbird-ubuntu-full
+    steps:
+    
+      #Checkout
+      - checkout
+            
+      # Run Build command
+      - type: shell
+        command: |
+          bundle exec jekyll build
+   
+      # Deploy to s3 bucket
+      - type: shell
+        command: |
+           bundle exec s3_website push --review
+           
   staging:
     working_directory: /project/workplace/
     docker:
@@ -69,11 +88,27 @@ workflows:
   version: 2
   build_and_deploy:
     jobs:
+      - review
       - staging
+          filters:
+            tags:
+              only: /^dev.*/
+            branches:
+              ignore: /.*/
       - hold:
           type: approval
           requires:
               - staging
+          filters:
+            tags:
+              only: /^dev.*/
+            branches:
+              ignore: /.*/
       - prod:
           requires:
               - hold
+          filters:
+            tags:
+              only: /^dev.*/
+            branches:
+              ignore: /.*/
