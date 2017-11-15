@@ -1,5 +1,6 @@
 	<script>
-		var excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		console.log(window.location.host);
+		var excludedSites = ["127.0.0.1:4000", "www.sunbird.org","lakhanmandloi.github.io"];
 		if (excludedSites.indexOf(window.location.host) > -1){
 			document.write("<base href='/' />");
 		} else {
