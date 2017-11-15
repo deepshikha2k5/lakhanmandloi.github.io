@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 		<script>
-		var excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		console.log(window.location.host);
+		var excludedSites = ["127.0.0.1:4000", "www.sunbird.org","lakhanmandloi.github.io"];
 		if (excludedSites.indexOf(window.location.host) > -1){
 			document.write("<base href='/' />");
 		} else {
-			document.write("<base href='http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.21/' />");
+			document.write("<base href='http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.22/' />");
 		}
 	</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -22,7 +23,7 @@
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="Cache-Control" content="no-store" />
 	<meta http-equiv="pragma" content="no-cache" />
-	<meta name="last-modified" content="2017-11-15 17:25:27 +0530">
+	<meta name="last-modified" content="2017-11-15 17:51:23 +0530">
 	<meta http-equiv="Expires" content="600" />
 	
 	
@@ -47,7 +48,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-8 col-sm-3 col-md-2 logo">
-				<a href="http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.21/" >
+				<a href="http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.22/" >
 					<img src="img/sunbird-logo.png" alt="logo">
 				</a>
 			</div>
