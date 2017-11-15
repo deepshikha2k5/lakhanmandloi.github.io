@@ -12,7 +12,8 @@ jobs:
       # Run Build command
       - type: shell
         command: |
-          bundle exec jekyll build --baseurl http://sunbird-review.s3-website.ap-south-1.amazonaws.com/$CIRCLE_BUILD_NUM
+          JEKYLL_ENV=http://sunbird-review.s3-website.ap-south-1.amazonaws.com/$CIRCLE_BUILD_NUM
+          bundle exec jekyll build 
       # Deploy to s3 bucket
       - type: shell
         command: |
