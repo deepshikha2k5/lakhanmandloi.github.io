@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script>
+		var excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		if (excludedSites.indexOf(window.location.host) > -1){
+			document.write("<base href='/' />");
+		} else {
+			document.write("<base href='http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.21/' />");
+		}
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-	<base href="/">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-touch-fullscreen" content="yes" />
 	<link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
@@ -16,7 +23,7 @@
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="Cache-Control" content="no-store" />
 	<meta http-equiv="pragma" content="no-cache" />
-	<meta name="last-modified" content="2017-11-14 16:36:42 +0530">
+	<meta name="last-modified" content="2017-11-15 17:25:27 +0530">
 	<meta http-equiv="Expires" content="600" />
 	
 	
@@ -25,13 +32,15 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="/css/owl/owl.carousel.min.css?14112017"  />
-	<link rel="stylesheet" href="/css/style.css?14112017"  />
+	<link rel="stylesheet" href="css/owl/owl.carousel.min.css?15112017"  />
+	<link rel="stylesheet" href="css/style.css?15112017"  />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js?14112017"></script>
-	<script type="text/javascript" src="/js/owl.carousel.min.js?14112017"></script>
-	<script type="text/javascript" src="/js/jquery.tocLight.js?14112017"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js?15112017"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js?15112017"></script>
+	<script type="text/javascript" src="js/jquery.tocLight.js?15112017"></script>
+	
+	
 
 
 	<meta name="robots" content="index, follow">
@@ -41,8 +50,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-8 col-sm-3 col-md-2 logo">
-				<a href="/" >
-					<img src="/img/sunbird-logo.png" alt="logo">
+				<a href="http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.21/" >
+					<img src="img/sunbird-logo.png" alt="logo">
 				</a>
 			</div>
 			<div class="col-xs-4 text-right visible-xs mobile-menu">
@@ -55,12 +64,12 @@
 				<div class="navbar-header">
 					<div class="collapse navbar-collapse" id="mainNav" >
 						<ul class="nav navbar-nav">
-							<li class=""><a href="/about/">About</a></li>
-							<li class=""><a href="/features/">Features</a></li>
-							<li class=""><a href="/docs/">Documentation</a></li>
-							<li class=""><a href="/participate/">Participate</a></li>
+							<li class=""><a href="about/">About</a></li>
+							<li class=""><a href="features/">Features</a></li>
+							<li class=""><a href="docs/">Documentation</a></li>
+							<li class=""><a href="participate/">Participate</a></li>
 							<li class=""><a href="https://github.com/project-sunbird" target="_blank">Source Code</a></li>
-							<li class=""><a href="/contact/">Contact Us</a></li>
+							<li class=""><a href="contact/">Contact Us</a></li>
 						</ul>
 					</div>
 				</div>
@@ -94,12 +103,12 @@
 				<div class="container">
 					<div class="inner-content text-center">
 						<div class="inner-content-heading">
-							<div class="text-light">Mainer 1 -- 20 lines of your code</div>
+							<div class="text-light">Forker -- 20 lines of your code</div>
 							<div class="text-semibold">Can impact a million minds</div>
 						</div>
 						<div class="text-light secondary-content">Collaborate and build an open source modular learning management platform</div>
 						<button class="btn-default text-regular">
-							<a href="/about/">About Sunbird</a>
+							<a href="about/">About Sunbird</a>
 						</button>
 						
 					</div>
@@ -127,7 +136,7 @@
 							<div class="text-semibold">Create diverse learning<br>opportunities</div>
 						</div>
 						<button class="btn-secondary text-regular">
-							<a href="/participate/">Participate</a>
+							<a href="participate/">Participate</a>
 						</button>
 					</div>
 				</div>
@@ -148,10 +157,10 @@
 								<li>Offline-enabled</li>
 								<li>For collaboration and use <br>by institutions, publishers,<br>educators, students</li>							
 							</ul>
-							<button class="btn-features"><a href="/features/">More Features</a></button>
+							<button class="btn-features"><a href="features/">More Features</a></button>
 						</div>
 						<div class="col-md-7 col-xs-12">
-							<div class=""><img src="/img/learning.png" alt="learning"></div>
+							<div class=""><img src="img/learning.png" alt="learning"></div>
 						</div>
 					</div>
 				</div>
@@ -160,16 +169,16 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-7 col-xs-12">
-							<div class=""><img src="/img/git-screen.png" alt="Git Screen"></div>
+							<div class=""><img src="img/git-screen.png" alt="Git Screen"></div>
 						</div>
 						<div class="col-md-5 col-xs-12">
 							<div class="main-content">
 								<div class="inner-content-heading">
-									<div class="git-icon"><img src="/img/git-icon.png" alt="Git Icon"></div>
+									<div class="git-icon"><img src="img/git-icon.png" alt="Git Icon"></div>
 									<div class="text-semibold">Fully open-source,</div> 
 									<div class="text-light">check out the source on github</div>
 								</div>
-								<button class="btn-features"><a href="/docs/">Documentation</a> <a href="https://github.com/project-sunbird" target="_blank">Source Code</a></button>
+								<button class="btn-features"><a href="docs/">Documentation</a> <a href="https://github.com/project-sunbird" target="_blank">Source Code</a></button>
 							</div>
 						</div>
 					</div>

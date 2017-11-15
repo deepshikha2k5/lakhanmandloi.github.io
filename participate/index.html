@@ -2,9 +2,16 @@
 <html>
 	
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script>
+		var excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		if (excludedSites.indexOf(window.location.host) > -1){
+			document.write("<base href='/' />");
+		} else {
+			document.write("<base href='http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.21/' />");
+		}
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-	<base href="/participate/">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-touch-fullscreen" content="yes" />
 	<link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
@@ -17,7 +24,7 @@
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="Cache-Control" content="no-store" />
 	<meta http-equiv="pragma" content="no-cache" />
-	<meta name="last-modified" content="2017-11-14 16:36:42 +0530">
+	<meta name="last-modified" content="2017-11-15 17:25:27 +0530">
 	<meta http-equiv="Expires" content="600" />
 	
 	
@@ -26,13 +33,15 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="/css/owl/owl.carousel.min.css?14112017"  />
-	<link rel="stylesheet" href="/css/style.css?14112017"  />
+	<link rel="stylesheet" href="css/owl/owl.carousel.min.css?15112017"  />
+	<link rel="stylesheet" href="css/style.css?15112017"  />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js?14112017"></script>
-	<script type="text/javascript" src="/js/owl.carousel.min.js?14112017"></script>
-	<script type="text/javascript" src="/js/jquery.tocLight.js?14112017"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js?15112017"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js?15112017"></script>
+	<script type="text/javascript" src="js/jquery.tocLight.js?15112017"></script>
+	
+	
 
 
 	<meta name="robots" content="index, follow">
@@ -43,8 +52,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-8 col-sm-3 col-md-2 logo">
-				<a href="/" >
-					<img src="/img/sunbird-logo.png" alt="logo">
+				<a href="http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.21/" >
+					<img src="img/sunbird-logo.png" alt="logo">
 				</a>
 			</div>
 			<div class="col-xs-4 text-right visible-xs mobile-menu">
@@ -57,12 +66,12 @@
 				<div class="navbar-header">
 					<div class="collapse navbar-collapse" id="mainNav" >
 						<ul class="nav navbar-nav">
-							<li class=""><a href="/about/">About</a></li>
-							<li class=""><a href="/features/">Features</a></li>
-							<li class=""><a href="/docs/">Documentation</a></li>
-							<li class=""><a href="/participate/">Participate</a></li>
+							<li class=""><a href="about/">About</a></li>
+							<li class=""><a href="features/">Features</a></li>
+							<li class=""><a href="docs/">Documentation</a></li>
+							<li class=""><a href="participate/">Participate</a></li>
 							<li class=""><a href="https://github.com/project-sunbird" target="_blank">Source Code</a></li>
-							<li class=""><a href="/contact/">Contact Us</a></li>
+							<li class=""><a href="contact/">Contact Us</a></li>
 						</ul>
 					</div>
 				</div>
