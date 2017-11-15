@@ -60,9 +60,9 @@
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  {{site.baseurl}}
-		  {{page.url}}
-		  <a href="{{site.baseurl}}{{page.url}}#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  {% assign page.absurl = site.baseurl | append: page.url | replace: "//", "/" %}
+		  {{page.absurl}}
+		  <a href="{{page.absurl}}#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
