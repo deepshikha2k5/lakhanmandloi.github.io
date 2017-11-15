@@ -39,7 +39,7 @@ jobs:
       - type: shell
         command: |
            cd _site
-           aws s3 sync --delete * s3://sunbird-trial/$CIRCLE_TAG
+           aws s3 sync --delete . s3://sunbird-trial/$CIRCLE_TAG
           
   prod:
     working_directory: /project/workspace/
