@@ -12,7 +12,7 @@ jobs:
       # Run Build command
       - type: shell
         command: |
-          JEKYLL_ENV=$CIRCLE_BUILD_NUM
+          echo "baseurl: http://sunbird-review.s3-website.ap-south-1.amazonaws.com/$CIRCLE_BUILD_NUM" >> _config.yml
           bundle exec jekyll build 
       # Deploy to s3 bucket
       - type: shell
