@@ -3,7 +3,6 @@ title: Sunbird
 name: Sunbird
 email: info@sunbird.org
 description: "Sunbird Site"
-environment: production
 permalink: pretty
 markdown: kramdown
 highlighter: pygments
