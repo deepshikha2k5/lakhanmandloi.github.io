@@ -38,7 +38,8 @@ jobs:
       # Deploy to s3 bucket
       - type: shell
         command: |
-           aws s3 sync --delete _site/* s3://sunbird-trial/$CIRCLE_TAG
+           cd _site
+           aws s3 sync --delete * s3://sunbird-trial/$CIRCLE_TAG
           
   prod:
     working_directory: /project/workspace/
