@@ -12,7 +12,7 @@ jobs:
       # Run Build command
       - type: shell
         command: |
-          JEKYLL_ENV = $CIRCLE_BUILD_NUM
+          JEKYLL_ENV=$CIRCLE_BUILD_NUM
           bundle exec jekyll build 
       # Deploy to s3 bucket
       - type: shell
