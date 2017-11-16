@@ -2,14 +2,15 @@
 <script>
 	// Dynamic Base URL
 	function getBase(){
-		var excludedSites = ["127.0.0.1:4000", "www.sunbird.org","lakhanmandloi.github.io"];
+		excludedSites = ["127.0.0.1:4000", "www.sunbird.org","lakhanmandloi.github.io"];
+		baseURL = document.getElementById('baseURL');
 		if (excludedSites.indexOf(window.location.host) > -1){
-			document.getElementById('baseURL').href="/";
+			baseURL.href="/";
 		} else {
-			document.getElementById('baseURL').href="{{site.baseurl}}";
+			baseURL.href="{{site.baseurl}}";
 		}
 	}
-	document.addEventListener("DOMContentLoaded", getBase);
+	getBase();
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
