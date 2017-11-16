@@ -12,7 +12,7 @@ jobs:
       # Run Build command
       - type: shell
         command: |
-          if [ "$CIRCLE_BRANCH" != "dev"]
+          if [ "$CIRCLE_BRANCH" != "dev" ]
           then
           echo "baseurl: http://sunbird-review.s3-website.ap-south-1.amazonaws.com/pr-$CIRCLE_PR_NUMBER/" >> _config.yml
           else
