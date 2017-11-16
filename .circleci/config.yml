@@ -13,6 +13,7 @@ jobs:
       - type: shell
         command: |
           echo "baseurl: http://sunbird-review.s3-website.ap-south-1.amazonaws.com/$CIRCLE_BUILD_NUM/" >> _config.yml
+          echo "buildVersion: $CIRCLE_TAG" >> _config.yml
           bundle exec jekyll build 
       # Deploy to s3 bucket
       - type: shell
@@ -33,6 +34,7 @@ jobs:
       - type: shell
         command: |
           echo "baseurl: http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/$CIRCLE_TAG/" >> _config.yml
+          echo "buildVersion: $CIRCLE_TAG" >> _config.yml
           bundle exec jekyll build
           
       # Deploy to s3 bucket
