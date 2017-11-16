@@ -12,7 +12,7 @@ jobs:
       # Run Build command
       - type: shell
         command: |
-          if [ -z $CIRCLE_PR_NUMBER ]
+          if [ "$CIRCLE_BRANCH" != "dev"]
           then
           echo "baseurl: http://sunbird-review.s3-website.ap-south-1.amazonaws.com/pr-$CIRCLE_PR_NUMBER/" >> _config.yml
           else
@@ -25,7 +25,7 @@ jobs:
       - type: shell
         command: |
            cd _site
-           if [ -z $CIRCLE_PR_NUMBER ]
+           if [ "$CIRCLE_BRANCH" != "dev" ]
            then
            aws s3 sync --delete . s3://sunbird-review/pr-$CIRCLE_PR_NUMBER
            else
