@@ -24,8 +24,6 @@
 	<meta name="last-modified" content="{{ site.time }}">
 	<meta http-equiv="Expires" content="600" />
 	
-	
-
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -37,6 +35,16 @@
 	<script type="text/javascript" src="js/bootstrap.min.js?{{ site.time | | date: '%d%m%Y'}}"></script>
 	<script type="text/javascript" src="js/owl.carousel.min.js?{{ site.time | | date: '%d%m%Y'}}"></script>
 	<script type="text/javascript" src="js/jquery.tocLight.js?{{ site.time | | date: '%d%m%Y'}}"></script>
+	<script>
+		window.onload = function getRoot(){
+			root = document.getElementById('root');
+			if (excludedSites.indexOf(window.location.host) > -1){
+				root.href="/";
+			} else {
+				root.href="{{site.baseurl}}";
+			}
+		}
+	</script>
 	
 	
 
