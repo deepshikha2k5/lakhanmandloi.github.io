@@ -84,7 +84,6 @@
 		});
 	});
 	$('#toc a').each(function(){
-		console.log(baseURL.href);
 		var url = this.href.replace(baseURL.href, "");
 		this.href = '{{page.url | remove_first: "/" }}' + url;
     })
