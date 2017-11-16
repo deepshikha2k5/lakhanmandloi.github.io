@@ -7,7 +7,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			document.write("<base href='/' />");
 		} else {
-			document.write("<base href='http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.22/' />");
+			document.write("<base href='http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.23/' />");
 		}
 	</script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -24,22 +24,30 @@
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="Cache-Control" content="no-store" />
 	<meta http-equiv="pragma" content="no-cache" />
-	<meta name="last-modified" content="2017-11-15 17:51:23 +0530">
+	<meta name="last-modified" content="2017-11-16 11:11:54 +0530">
 	<meta http-equiv="Expires" content="600" />
 	
-	
-
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="css/owl/owl.carousel.min.css?15112017"  />
-	<link rel="stylesheet" href="css/style.css?15112017"  />
+	<link rel="stylesheet" href="css/owl/owl.carousel.min.css?16112017"  />
+	<link rel="stylesheet" href="css/style.css?16112017"  />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js?15112017"></script>
-	<script type="text/javascript" src="js/owl.carousel.min.js?15112017"></script>
-	<script type="text/javascript" src="js/jquery.tocLight.js?15112017"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js?16112017"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js?16112017"></script>
+	<script type="text/javascript" src="js/jquery.tocLight.js?16112017"></script>
+	<script>
+		window.onload = function getRoot(){
+			root = document.getElementById('root');
+			if (excludedSites.indexOf(window.location.host) > -1){
+				root.href="/";
+			} else {
+				root.href="http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.23/";
+			}
+		}
+	</script>
 	
 	
 
@@ -52,7 +60,7 @@
   <div class="container inner container-height docs">
     <header class="logo-container">
       <div class="logo">
-        <a href="http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/dev.1.0.22/">
+        <a id="root" href="">
           <img src="img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
         </a>
       </div>
