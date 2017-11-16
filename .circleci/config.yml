@@ -12,14 +12,25 @@ jobs:
       # Run Build command
       - type: shell
         command: |
-          echo "baseurl: http://sunbird-review.s3-website.ap-south-1.amazonaws.com/$CIRCLE_BUILD_NUM/" >> _config.yml
+          if [ -z $CIRCLE_PR_NUMBER ]
+          then
+          echo "baseurl: http://sunbird-review.s3-website.ap-south-1.amazonaws.com/pr-$CIRCLE_PR_NUMBER/" >> _config.yml
+          else
+          echo "baseurl: http://sunbird-review.s3-website.ap-south-1.amazonaws.com/build-$CIRCLE_BUILD_NUM/" >> _config.yml
+          fi
           echo "buildVersion: $CIRCLE_TAG" >> _config.yml
+          echo "buildNo: $CIRCLE_BUILD_NUM" >> _config.yml
           bundle exec jekyll build 
       # Deploy to s3 bucket
       - type: shell
         command: |
            cd _site
-           aws s3 sync --delete . s3://sunbird-review/$CIRCLE_BUILD_NUM
+           if [ -z $CIRCLE_PR_NUMBER ]
+           then
+           aws s3 sync --delete . s3://sunbird-review/pr-$CIRCLE_PR_NUMBER
+           else
+           aws s3 sync --delete . s3://sunbird-review/build-$CIRCLE_BUILD_NUM
+           fi
            
   staging:
     working_directory: /project/workplace/
@@ -35,6 +46,7 @@ jobs:
         command: |
           echo "baseurl: http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/$CIRCLE_TAG/" >> _config.yml
           echo "buildVersion: $CIRCLE_TAG" >> _config.yml
+          echo "buildNo: $CIRCLE_BUILD_NUM" >> _config.yml
           bundle exec jekyll build
           
       # Deploy to s3 bucket
