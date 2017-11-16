@@ -14,9 +14,9 @@ jobs:
         command: |
           if [ "$CIRCLE_BRANCH" != "dev" ]
           then
-          echo "baseurl: http://sunbird-review.s3-website.ap-south-1.amazonaws.com/pr-$CIRCLE_PR_NUMBER/" >> _config.yml
+          echo "baseurl: http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/$CIRCLE_PR_NUMBER/" >> _config.yml
           else
-          echo "baseurl: http://sunbird-review.s3-website.ap-south-1.amazonaws.com/build-$CIRCLE_BUILD_NUM/" >> _config.yml
+          echo "baseurl: http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/build/$CIRCLE_BUILD_NUM/" >> _config.yml
           fi
           echo "buildVersion: $CIRCLE_TAG" >> _config.yml
           echo "buildNo: $CIRCLE_BUILD_NUM" >> _config.yml
@@ -27,9 +27,9 @@ jobs:
            cd _site
            if [ "$CIRCLE_BRANCH" != "dev" ]
            then
-           aws s3 sync --delete . s3://sunbird-review/pr-$CIRCLE_PR_NUMBER
+           aws s3 sync --delete . s3://sunbird-trial/pr/$CIRCLE_PR_NUMBER
            else
-           aws s3 sync --delete . s3://sunbird-review/build-$CIRCLE_BUILD_NUM
+           aws s3 sync --delete . s3://sunbird-trial/build/$CIRCLE_BUILD_NUM
            fi
            
   staging:
@@ -44,7 +44,7 @@ jobs:
       # Run Build command
       - type: shell
         command: |
-          echo "baseurl: http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/$CIRCLE_TAG/" >> _config.yml
+          echo "baseurl: http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/v/$CIRCLE_TAG/" >> _config.yml
           echo "buildVersion: $CIRCLE_TAG" >> _config.yml
           echo "buildNo: $CIRCLE_BUILD_NUM" >> _config.yml
           bundle exec jekyll build
@@ -53,7 +53,7 @@ jobs:
       - type: shell
         command: |
            cd _site
-           aws s3 sync --delete . s3://sunbird-trial/$CIRCLE_TAG
+           aws s3 sync --delete . s3://sunbird-trial/v/$CIRCLE_TAG
           
   prod:
     working_directory: /project/workspace/
@@ -80,7 +80,7 @@ jobs:
           cd ..
           mkdir downloads
           cd downloads
-          aws s3 sync --delete s3://sunbird-trial/$CIRCLE_TAG .
+          aws s3 sync --delete s3://sunbird-trial/v/$CIRCLE_TAG .
            
       # Deploy to Gitpages
       - type: shell
