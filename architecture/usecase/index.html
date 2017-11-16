@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/v/dev.1.0.26/";
+			baseURL.href="http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/v/dev.1.0.27/";
 		}
 	}
 	getBase();
@@ -30,10 +30,10 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-11-16 18:36:07 +0530">
+<meta name="last-modified" content="2017-11-16 22:24:40 +0530">
 <meta http-equiv="Expires" content="600" />
-<meta name="buildVersion" content="dev.1.0.26" />
-<meta name="buildNo" content="144" />
+<meta name="buildVersion" content="dev.1.0.27" />
+<meta name="buildNo" content="149" />
 
 <!-- CDN's -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
@@ -456,6 +456,11 @@ $("a[href$='architecture/usecase/']").addClass("sidebar-link-selected");
 			}
 		});
 	});
+	$('#toc a').each(function(){
+		console.log(baseURL.href);
+		var url = this.href.replace(baseURL.href, "");
+		this.href = 'architecture/usecase/' + url;
+    })
   </script>
   </body>
 </html>
