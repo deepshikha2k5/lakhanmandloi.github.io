@@ -1,10 +1,11 @@
+	<base id="baseURL" href='/' />
 	<script>
 		console.log(window.location.host);
 		var excludedSites = ["127.0.0.1:4000", "www.sunbird.org","lakhanmandloi.github.io"];
 		if (excludedSites.indexOf(window.location.host) > -1){
-			document.write("<base href='/' />");
+			document.getElementById('baseURL').href="/";
 		} else {
-			document.write("<base href='{{site.baseurl}}' />");
+			document.getElementById('baseURL').href="{{site.baseurl}}";
 		}
 		
 	</script>
