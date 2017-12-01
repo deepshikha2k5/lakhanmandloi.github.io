@@ -25,7 +25,7 @@ jobs:
       # Deploy to s3 bucket
       - type: shell
         command: |
-           apt-get install jq
+           apt-get install -y jq
            cd _site
            if [ "$CIRCLE_BRANCH" != "dev" ]
            then
