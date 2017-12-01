@@ -29,6 +29,11 @@ jobs:
            if [ "$CIRCLE_BRANCH" != "dev" ]
            then
            aws s3 sync --delete . s3://sunbird-trial/pr/$CIRCLE_PR_NUMBER
+           curl \
+              -X POST \
+              -u $guser:x-oauth-basic \
+              'https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER/comments' \
+              -d '{"body": "Hello, You can review site at http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/$CIRCLE_PR_NUMBER"}' \
            else
            aws s3 sync --delete . s3://sunbird-trial/review/
            fi
