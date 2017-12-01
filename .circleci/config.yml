@@ -31,12 +31,12 @@ jobs:
            then
            aws s3 sync --delete . s3://sunbird-trial/pr/$CIRCLE_PR_NUMBER
            prdata=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER) 
-           username=$( echo "${prdata}" | jq '.user.login')
+           username=$(echo "${prdata}" | jq '.user.login')
            username=${username//\"/}
            curl \
               -X POST \
               -u $guser:x-oauth-basic \
-              -d '{"body": "Hello @'"username"', You can review your PR Changes at http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"' . **Please Note - This is automatically Generated Message.**"}' \
+              -d '{"body": "Hello @'"$username"', You can review your PR Changes at http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"' . **Please Note - This is automatically Generated Message.**"}' \
               https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER/comments
            else
            aws s3 sync --delete . s3://sunbird-trial/review/
