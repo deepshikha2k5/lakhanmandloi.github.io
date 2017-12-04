@@ -3,7 +3,7 @@ jobs:
   review:
     working_directory: /project/workplace/
     docker:
-      - image: lakhanmandloi/sunbird-ubuntu-full
+      - image: lakhanmandloi/sunbird-ubuntu-fuller
     steps:
     
       #Checkout
@@ -25,7 +25,6 @@ jobs:
       # Deploy to s3 bucket
       - type: shell
         command: |
-           apt-get install -y jq
            cd _site
            if [ "$CIRCLE_BRANCH" != "dev" ]
            then
@@ -45,7 +44,7 @@ jobs:
   staging:
     working_directory: /project/workplace/
     docker:
-      - image: lakhanmandloi/sunbird-ubuntu-full
+      - image: lakhanmandloi/sunbird-ubuntu-fuller
     steps:
     
       #Checkout
@@ -68,7 +67,7 @@ jobs:
   prod:
     working_directory: /project/workspace/
     docker:
-      - image: lakhanmandloi/sunbird-ubuntu-full
+      - image: lakhanmandloi/sunbird-ubuntu-fuller
     steps:
       
       #Checkout
