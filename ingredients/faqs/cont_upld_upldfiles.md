@@ -7,7 +7,7 @@
 
 	Enter URL of the video ( If the file to be uploaded is a Youtube Video)
 
-	{% image src='/pages/faqs/images/upldcont.png' full center alt='Upload File' %}
+	{% image src='docs/faqs/images/upldcont.png' full center alt='Upload File' %}
 
 	***Note:***
 	*These are the valid and supported file types:*
