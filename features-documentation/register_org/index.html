@@ -5,18 +5,18 @@
 <script>
 	// Dynamic Base URL
 	function getBase(){
-		excludedSites = ["127.0.0.1:4000", "www.sunbird.org","lakhanmandloi.github.io"];
+		excludedSites = ["127.0.0.1:4000", "www.sunbird.org", "lakhanmandloi.github.io"];
 		baseURL = document.getElementById('baseURL');
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release-1.0.4/";
+			baseURL.href="/releases/release-1.0.5/";
 		}
 	}
 	getBase();
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=10, user-scalable=yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-touch-fullscreen" content="yes" />
 <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
@@ -30,23 +30,29 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-05 15:59:45 +0530">
+<meta name="last-modified" content="2017-12-08 13:58:10 +0530">
 <meta http-equiv="Expires" content="600" />
-<meta name="buildVersion" content="release-1.0.4" />
-<meta name="buildNo" content="220" />
 
-<!-- CDN's -->
+<!--Build Details-->
+<meta name="buildVersion" content="release-1.0.5" />
+<meta name="buildNo" content="224" />
+<!--/Build Details-->
+
+<!-- CDN's-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<!-- /CDN's -->
+<!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?05122017" >
-<link rel="stylesheet" href="css/style.css?05122017" >
-<script type="text/javascript" src="js/bootstrap.min.js?05122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?05122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?05122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08122017"  />
+<link rel="stylesheet" href="css/style.css?08122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?08122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?08122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?08122017"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
 
 	
 		<meta name="robots" content="index, follow">
@@ -127,15 +133,10 @@
 					<a href="features-documentation/login/">Login</a>
 				</li>
 				<li>
-					<a href="features-documentation/administration/">Administration</a>
-					<ul class="sidebar-group">
-						<li>
-							<a href="features-documentation/register_org/">Register Organizations</a>
-						</li>
-						<li>
-							<a href="features-documentation/register_user/">Register Users</a>
-						</li>
-					</ul>
+					<a href="features-documentation/register_org/">Register Organizations</a>
+				</li>
+				<li>
+					<a href="features-documentation/register_user/">Register Users</a>
 				</li>
 				<li>
 					<a href="features-documentation/userrolepermission/">User Roles and Permissions</a>
@@ -156,7 +157,7 @@
 					<a href="features-documentation/coursetraining/">Courses and Training</a>
 				</li>
 				<li>
-					<a href="features-documentation/resources/">Resources</a>
+					<a href="features-documentation/library/">Library</a>
 				</li>
 				<li>
 					<a href="features-documentation/contentlifecycle/">Content Lifecycle</a>
@@ -202,7 +203,35 @@
 						<a  href="developer-docs/installation/installing_sunbirdon_laptop/">Install Sunbird on Laptop</a>
 					</li>
 					<li>
-						<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
+						<div class="">
+							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/setup_db/">Setup Databases</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/check_installation/">Check Installation</a>
+								</li>
+								<!--<li>
+									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
+								</li>-->
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
 					</li>
 					<!--<li>
 						<div class="">
@@ -234,7 +263,7 @@
 									<a href="apis/metricsapi/" target="_blank">Metrics APIs</a>
 								</li>
 								<li>
-									<a href="apis/notificationapi/" target="_blank">Notification  APIs</a>
+									<a href="apis/notificationapi/" target="_blank">Notification APIs</a>
 								</li>
 								<li>
 									<a href="apis/orgapi/" target="_blank">Organisation Management APIs</a>
@@ -244,6 +273,9 @@
 								</li>
 							</ul>
 						</div>
+					</li>
+					<li>
+						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
 				</div>
 			</li>
@@ -259,7 +291,7 @@
 				<a href="faqs/content_format/">Content Format</a>
 			</li>
 			<li>
-				<a href="faqs/content_repo/">Content Repo</a>
+				<a href="faqs/content_repo/">Content Repositories</a>
 			</li>
 			<li>
 				<a href="faqs/contentreviews/">Content Review</a>
@@ -295,7 +327,7 @@
 				<a href="faqs/user_rightspermissions/">Users Rights and Permission</a>
 			</li>
 		</ul>
-		<a href="faqs/glossary/">
+		<a href="glossary/">
 			<h4 class="sidebar-group-title">Glossary</h4>
 		</a>
 	</div>
@@ -314,87 +346,178 @@ $("a[href$='features-documentation/register_org/']").addClass("sidebar-link-sele
       <div id="main-content" class="inner__content">
 			<p class="edit-para text-right">
 				<span>
-			<!--<a target="_blank" class="contribute" href="">
+			<a target="_blank" class="contribute" href="contributions/contribution_guidelines">
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
-			  </a> &nbsp;&nbsp;-->
+			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/lakhanmandloi/lakhanmandloi.github.io/edit/dev/pages/features-documentation/register_org.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/features-documentation/register_org.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
-			  <a target="_blank" href="https://github.com/lakhanmandloi/lakhanmandloi.github.io/issues" title="Report issue">
+			  <a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
 				  Report
 			  </a>
 			  </span>
 			</p>
-          <p>Organization administrators can use the credentials received to sign in and upload organization details. Administrators of administrating organizations can add other organization details.</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Signing In</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#link1-2"><span class="tocnumber">2 .</span> <span class="toctext">Accessing your Workspace</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#link1-3"><span class="tocnumber">3 .</span> <span class="toctext">Uploading Organizations</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>Organization administrators can use the credentials received to sign in and upload organization details. Administrators of administrating organizations can add other organization details.</p>
 
-<p><strong>Uploading Organizations</strong></p>
+<h2 id="link1-1">Signing In</h2>
+
+<ol>
+  <li>Sign in the Sunbird portal using your registered credentials</li>
+</ol>
+
+<h2 id="link1-2">Accessing your Workspace</h2>
+
+<ol>
+  <li>Click <strong>Profile</strong> tab on the header <br /> OR</li>
+  <li>Click the <strong>Profile Icon</strong> and select <strong>Profile</strong></li>
+</ol>
+
+<h2 id="link1-3">Uploading Organizations</h2>
 
 <ol>
   <li>Click <strong>Upload Organizations</strong>. The upload organizations page is displayed</li>
   <li>Download the csv file for reference</li>
   <li>You can add or upload details of up to 200 organizations at a time in one csv</li>
-  <li>The <strong>OrgName</strong> column is mandatory. Enter organization name in this column</li>
-  <li>Enter each organization’s name in a separate row</li>
   <li>
-    <p>Entering details in all other columns is optional</p>
+    <p>Descriptions and valid values for each columns are as listed below:</p>
 
     <table>
       <thead>
         <tr>
-          <th>Column Title</th>
+          <th>Sl.No</th>
+          <th>Column Name</th>
           <th>Description</th>
+          <th>Column Type</th>
+          <th>Field Type</th>
+          <th>Valid Values</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td>1</td>
+          <td>orgName</td>
+          <td>Organization name</td>
+          <td>Alphabetic</td>
+          <td>Mandatory</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>2</td>
           <td>isRootOrg</td>
-          <td>Valid value for this column is True</td>
+          <td>Whether the  organization has the authority to upload other organization</td>
+          <td>Alphabetic</td>
+          <td>Conditional</td>
+          <td>TRUE, FALSE</td>
         </tr>
         <tr>
+          <td>3</td>
           <td>channel</td>
-          <td>Unique ID provided during master organization creation</td>
+          <td>Channel ID provided to the administrator organization by Sunbird</td>
+          <td>Alphanumeric</td>
+          <td>Conditional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>4</td>
           <td>externalId</td>
-          <td>Unique ID associated with each organization in the administrating organization’s repository</td>
+          <td>Unique ID associated with each organization in the administrating  organization’s repository</td>
+          <td>Alphanumeric</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>5</td>
           <td>provider</td>
-          <td>Channel ID of the administrator organization</td>
+          <td>Channel ID provided to the administrator organization by Sunbird</td>
+          <td>Alphanumeric</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>6</td>
           <td>description</td>
-          <td>Details describing the organization</td>
+          <td>Details describing  the organization</td>
+          <td>Alphanumeric</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>7</td>
           <td>homeUrl</td>
           <td>Organization’s homepage url</td>
+          <td>Alphanumeric</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>8</td>
           <td>orgCode</td>
-          <td>Organization’s unique code, if any,</td>
+          <td>Unique code for the organization that is being uploaded</td>
+          <td>Alphabetic</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>9</td>
           <td>orgType</td>
-          <td>Type of organization, such as, NGO, primary school, secondary school etc</td>
+          <td>Type of organization, such as, NGO, primary school, secondary school etc.</td>
+          <td>Alphabetic</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>10</td>
           <td>preferredLanguage</td>
           <td>Language preferences for the organization, if any</td>
+          <td>Alphabetic</td>
+          <td>Optional</td>
+          <td>English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu</td>
         </tr>
         <tr>
+          <td>11</td>
           <td>contactDetail</td>
-          <td>Organization’s phone number and email ID. Details should be entered within single quotes. For 	example: ‘Phonenumber’</td>
+          <td>Organization’s phone number, email ID and address</td>
+          <td>Alphanumeric</td>
+          <td>Optional</td>
+          <td>‘address’:’address’,’phone’:’xxxxxxxx’,’fax’:’xxxxx’</td>
         </tr>
       </tbody>
     </table>
+
+    <p><strong><em>Note</em></strong> :</p>
+
+    <p>Columns titled <strong>isRootOrg</strong> and <strong>channel</strong> have to be filled only uploading an administrator organization. In all other cases, these columns have to be left blank.</p>
   </li>
-  <li>Save the csv file to your computer</li>
-  <li>Click UPLOAD ORGANIZATIONS CSV. The explorer window is displayed</li>
-  <li>Select the saved csv file and click open</li>
+  <li><strong>Save</strong> the csv file to your computer</li>
+  <li>Click <strong>UPLOAD ORGANIZATIONS CSV</strong>. The explorer window is displayed</li>
+  <li>Select the saved csv file and click <strong>Open</strong></li>
   <li>On successful file upload, a process ID will be generated, else an error message is displayed</li>
 </ol>
 
