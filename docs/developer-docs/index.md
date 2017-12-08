@@ -7,8 +7,8 @@ description: Developer Documentation Overview
 keywords: 'Installation, pre requisite, extending sunbird'
 published: true
 allowSearch: true
-alias:
-  - docs/developer-docs/
+redirect-from:
+  - developer-docs/
 ---
 
 
