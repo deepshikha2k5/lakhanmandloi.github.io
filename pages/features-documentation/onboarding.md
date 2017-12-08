@@ -9,8 +9,9 @@ published: true
 allowSearch: true
 ---
 
+Sunbird has the provision to register and provide user credentials (user ID and password) to organizations, such as states, NGO and other organized body of individuals.
 
-Users can get on board Sunbird either as individuals or as part of an organization. The onboarding process is simple. 
-Individuals can contact us by submitting the form available on the **[Contact us](contact){:target="_blank"}** page. We will get back to you with user credentials. 
+The states and organizations make a policy decision to allow / disallow registering single individual users. Contact your organization administrator for details.
 
-Organizations can contact us using the same form and designate an individual who will be the organization's administrator (Org Admin). The Org Admin can create and upload user credentials in bulk for the organization. The Org Admin also has privileges to manage users and user passwords for the organization.
+Signing up on Sunbird is a seamless process. Any organized, recognized education or learning body can add their members as registered users of the platform. For example; an organization, state, NGO, certification body or study centre can add their staff and users as Sunbird users. 
+

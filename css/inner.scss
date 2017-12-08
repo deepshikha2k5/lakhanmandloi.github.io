@@ -117,10 +117,10 @@
 		}
 	}
 	h2 {
-		font-size: 36px;
+		font-size: 30px;
 	}
 	h3 {
-		font-size: 30px;
+		font-size: 24px;
 	}
 	h4 {
 		font-size: 22px;
@@ -198,11 +198,16 @@
 
   table {
     font-size: 13px;
-    margin: 30px 0;
+    margin: 20px 0;
+    width:100%;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     > tbody {
       > tr > td {
         border-top: 1px solid #c7d4e4;
-        padding: 10px 15px;
+        padding: 10px;
         border-left: 1px solid #f5f5f5;
         //word-break: break-all;
         &:first-child {
@@ -344,3 +349,7 @@ a:hover{cursor:pointer;}
 .table-img img{
 	width:100%;
 }
+.inner__content table img{
+	width:100%;
+} 
+
