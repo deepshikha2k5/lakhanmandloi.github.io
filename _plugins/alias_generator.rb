@@ -46,7 +46,7 @@ module Jekyll
 
     def process_pages
       @site.pages.each do |page|
-        generate_aliases(page.destination('').gsub(/index\.(html|htm)$/, ''), page.data['alias'])
+        generate_aliases(page.url, page.data['alias'])
       end
     end
 
@@ -84,10 +84,10 @@ module Jekyll
       <head>
       <link rel="canonical" href="#{destination_path}"/>
       <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-      <meta http-equiv="refresh" content="5;url=#{destination_path}" />
+      <meta http-equiv="refresh" content="0;url=#{destination_path}" />
       </head>
       <body>
-      <p>Redirecting to the correct page.</p>
+      <p>Redirecting to the new page.</p>
       </body>
       </html>
       EOF
