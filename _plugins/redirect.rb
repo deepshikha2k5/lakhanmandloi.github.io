@@ -82,7 +82,7 @@ module Jekyll
       <!DOCTYPE html>
       <html>
       <head>
-      <base id="baseURL" href="#{@site.baseurl}" />
+      <base id="baseURL" href="/" />
       <link rel="canonical" href="#{destination_path}"/>
       <meta http-equiv="content-type" content="text/html; charset=utf-8" />
       <script>
@@ -93,7 +93,7 @@ module Jekyll
 				if (excludedSites.indexOf(window.location.host) > -1){
 					baseURL.href="/";
 				} else {
-					baseURL.href="{{site.baseurl}}";
+					baseURL.href="#{@site.baseurl}";
 				}
 			}
 			getBase();
