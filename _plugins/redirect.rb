@@ -98,7 +98,7 @@ module Jekyll
 			}
 			getBase();
 	</script>
-	<meta http-equiv="refresh" content="0;url=#{destination_path}" />
+	<meta http-equiv="refresh" content="1;url=#{destination_path}" />
       </head>
       <body>
       <p>Redirecting to the new page.</p>
