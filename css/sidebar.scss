@@ -226,3 +226,13 @@
 .sidebar-wrapper.developer-docs-installation .sidebar-group.developer-docs,
 .sidebar-wrapper.apis .sidebar-group.developer-docs,
 .sidebar-wrapper.faqs .sidebar-group.faqs{display:block !important;}
+.version.version-1 ,
+.version.version-2 ,
+.version.version-3{
+	display:none;
+}
+.version-1 .version-1 ,
+.version-2 .version-2 ,
+.version-3 .version-3 {
+	display:block;
+}
