@@ -3825,6 +3825,7 @@ body > header {
 .version.version-3 {
   display: none; }
 
+.version-contributions .version-3,
 .version-1 .version-1,
 .version-2 .version-2,
 .version-3 .version-3 {
