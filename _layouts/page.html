@@ -21,9 +21,27 @@
       </button>
     </header>
     <nav class="sidebar-container" id="mobile-dropdown">
-      <div class="inner__sidebar">
-        {% include sidebar.html %}
-      </div>
+		<div class="inner__sidebar">
+			{% if site.showSearch == true %}
+				{% include search.html %}
+			{% endif %}
+			{% assign paths = page.url | split: '/' %}
+			{% assign version = paths[2] | split: '.' %}
+			<div class="sidebar-wrapper version-{{version[0]}} {{paths[3]}}">
+				<div class="version version-1">
+					{% include sidebar-1.0.html %}
+				</div>
+				<div class="version version-2">
+					{% include sidebar-2.0.html %}
+				</div>
+				<div class="version version-3">
+					{% include sidebar-3.0.html %}
+				</div>
+			</div>
+			<script>
+				$("a[href$='{{page.url | remove_first: "/" }}']").addClass("sidebar-link-selected");
+			</script>
+		</div>
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
@@ -33,7 +51,7 @@
       <div id="main-content" class="inner__content">
 			<p class="edit-para text-right">
 				<span>
-			<a target="_blank" class="contribute" href="contributions/contribution_guidelines">
+			<a target="_blank" class="contribute" href="docs/contributions/contribution_guidelines">
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
