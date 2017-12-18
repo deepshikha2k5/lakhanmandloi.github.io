@@ -27,6 +27,23 @@
 			{% endif %}
 			{% assign paths = page.url | split: '/' %}
 			{% assign version = paths[2] | split: '.' %}
+			<select id="docs-version">
+				<option value="docs/3.0/architecture/" {% if version[0] == '3' %}selected=selected{% endif %}>Version 3.0 (Latest)</option>
+				<option value="docs/2.0/architecture/" {% if version[0] == '2' %}selected=selected{% endif %}>Version 2.0</option>
+				<option value="docs/1.0/architecture/" {% if version[0] == '1' %}selected=selected{% endif %}>Version 1.0</option>
+			</select>
+			<script>
+				$(function(){
+				  // bind change event to select
+				  $('#docs-version').on('change', function () {
+					  var url = $(this).val(); // get selected value
+					  if (url) { // require a URL
+						  window.location = url; // redirect
+					  }
+					  return false;
+				  });
+				});
+			</script>
 			<div class="sidebar-wrapper version-{{version[0]}} {{paths[3]}}">
 				<div class="version version-1">
 					{% include sidebar-1.0.html %}
