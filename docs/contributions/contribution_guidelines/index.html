@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release-1.0.15/";
+			baseURL.href="/releases/release-1.0.16/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-18 16:53:47 +0530">
+<meta name="last-modified" content="2017-12-19 18:53:43 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release-1.0.15" />
-<meta name="buildNo" content="268" />
+<meta name="buildVersion" content="release-1.0.16" />
+<meta name="buildNo" content="276" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?18122017"  />
-<link rel="stylesheet" href="css/style.css?18122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?18122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?18122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?18122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?19122017"  />
+<link rel="stylesheet" href="css/style.css?19122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?19122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?19122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?19122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -89,27 +89,52 @@
 			
 			
 			<select id="docs-version">
-				<option value="docs/3.0/architecture/" >Version 3.0 (Latest)</option>
-				<option value="docs/2.0/architecture/" >Version 2.0</option>
-				<option value="docs/1.0/architecture/" >Version 1.0</option>
-			</select>
-			<script>
-				$(function(){
-				  // bind change event to select
-				  $('#docs-version').on('change', function () {
-					  var url = $(this).val(); // get selected value
-					  if (url) { // require a URL
-						  window.location = url; // redirect
-					  }
-					  return false;
-				  });
-				});
-			</script>
-			<div class="sidebar-wrapper version-contributions contribution_guidelines">
-				<div class="version version-1">
+	
+		
+			
+				<option value="/docs/3.0/contribution_guidelines/" >
+					Version 3.0
 					
+						( Latest )
+					
+					</option>
+			
+	
+		
+			
+				<option value="/docs/2.0/contribution_guidelines/" >
+					Version 2.0
+					
+					</option>
+			
+	
+		
+			
+				<option value="/docs/1.0/contribution_guidelines/" >
+					Version 1.0
+					
+					</option>
+			
+	
+</select>
+
+<script>
+	$(function(){
+		$('#docs-version').on('change', function () {
+			var url = $(this).val(); // get selected value
+				if (url) { // require a URL
+					window.location = url; // redirect
+				}
+			return false;
+		});
+	});
+</script>
+
+			<div class="sidebar-wrapper  contribution_guidelines">
+				
+				
 	<a href="docs/1.0/architecture/">
-		<h4 class="sidebar-group-title">Architecture 1.0</h4>
+		<h4 class="sidebar-group-title">Architecture</h4>
 	</a>
 	<ul class="sidebar-group architecture">
 		<li>
@@ -142,7 +167,7 @@
 				</li>
 			</ul>
 			<a href="docs/1.0/features-documentation/">
-				<h4 class="sidebar-group-title">Product Features 1.0</h4>
+				<h4 class="sidebar-group-title">Product Features</h4>
 			</a>
 			<ul class="sidebar-group features-documentation" >
 				<li>
@@ -350,497 +375,6 @@
 		</a>
 	
 
-				</div>
-				<div class="version version-2">
-					
-	<a href="docs/2.0/architecture/">
-		<h4 class="sidebar-group-title">Architecture 2.0</h4>
-	</a>
-	<ul class="sidebar-group architecture">
-		<li>
-			<a href="docs/2.0/architecture/overview/">Overview</a>
-		</li>
-		<li>
-			<a href="docs/2.0/architecture/design/">Design</a>
-		</li>
-				<li>
-					<div class="">
-						<a href="docs/2.0/architecture/views/elementryview/">Views</a>
-						<ul class="sidebar-group">
-							<li>
-								<a href="docs/2.0/architecture/views/logical/">Logical View</a>
-							</li>
-							<li>
-								<a href="docs/2.0/architecture/views/physical/">Physical View</a>
-							</li>
-							<li>
-								<a href="docs/2.0/architecture/views/conceptual/">Conceptual View</a>
-							</li>
-							<li>
-								<a href="docs/2.0/architecture/views/deployment/">Deployment View</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<a href="docs/2.0/architecture/usecase/">Use Cases</a>
-				</li>
-			</ul>
-			<a href="docs/2.0/features-documentation/">
-				<h4 class="sidebar-group-title">Product Features 2.0</h4>
-			</a>
-			<ul class="sidebar-group features-documentation" >
-				<li>
-					<a href="docs/2.0/features-documentation/onboarding/">Onboarding</a>
-				</li>
-				<li>
-					<a href="docs/2.0/features-documentation/login/">Login</a>
-				</li>
-				<li>
-					<a href="docs/2.0/features-documentation/register_org/">Register Organizations</a>
-				</li>
-				<li>
-					<a href="docs/2.0/features-documentation/register_user/">Register Users</a>
-				</li>
-				<li>
-					<a href="docs/2.0/features-documentation/userrolepermission/">User Roles and Permissions</a>
-				</li>
-				<li>
-					<div class="">
-						<ul class="sidebar-group">
-							<li>
-								<a href="docs/2.0/features-documentation/userprofile/">User Profile</a>
-							</li>
-							<li>
-								<a href="docs/2.0/features-documentation/workspace/">Workspace</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<a href="docs/2.0/features-documentation/coursetraining/">Courses and Training</a>
-				</li>
-				<li>
-					<a href="docs/2.0/features-documentation/library/">Library</a>
-				</li>
-				<li>
-					<a href="docs/2.0/features-documentation/contentlifecycle/">Content Lifecycle</a>
-				</li>
-				<li>
-					<a href="docs/2.0/features-documentation/contentcreation/">Content Creation</a>
-				</li>
-				<li>
-					<a href="docs/2.0/features-documentation/contenteditor/">Content Editor</a>
-				</li>
-				<!--<li>
-					<a href="features-documentation/consumption/">Consume Study Material</a>
-				</li>-->
-				</li>
-				<li>
-					<div class="">
-						<a href="docs/2.0/features-documentation/guidelines/" >Guidelines</a>
-						<ul class="sidebar-group">
-							<li>
-								<a href="docs/2.0/features-documentation/intellectualproperty/">Intellectual Property</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<!--<li>
-					<a href="features-documentation/reportinganalytics/">Reporting and Analytics</a>
-				</li>-->
-				<li>
-					<a href="docs/2.0/features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
-				</li>
-		</ul>
-		<a href="docs/2.0/developer-docs/">
-				<h4 class="sidebar-group-title">Developer Documentation</h4>
-			</a>
-		<ul class="sidebar-group developer-docs">
-					<li>
-						<a href="docs/2.0/developer-docs/installation/">Installation Overview</a>
-					</li>
-					<!--<li>
-						<a href="developer-docs/hosting_sunbird/">Hosting Sunbird</a>
-					</li>-->
-					<li>
-						<a  href="docs/2.0/developer-docs/installation/installing_sunbirdon_laptop/">Install Sunbird on Laptop</a>
-					</li>
-					<li>
-						<div class="">
-							<a href="docs/2.0/developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
-							<ul class="sidebar-group">
-								<li>
-									<a href="docs/2.0/developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
-								</li>
-								<li>
-									<a href="docs/2.0/developer-docs/installation/setup_db/">Setup Databases</a>
-								</li>
-								<li>
-									<a href="docs/2.0/developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
-								</li>
-								<li>
-									<a href="docs/2.0/developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
-								</li>
-								<li>
-									<a href="docs/2.0/developer-docs/installation/cust_sunbird/">Customizing Assets</a>
-								</li>
-								<li>
-									<a href="docs/2.0/developer-docs/installation/check_installation/">Check Installation</a>
-								</li>
-								<!--<li>
-									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
-								</li>-->
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a href="docs/2.0/developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
-					</li>
-					<!--<li>
-						<div class="">
-							<a class="sidebar-group-title" href="developer-docs/extending_sunbird/">Extending Sunbird</a>
-						</div>
-					</li>
-					<li>
-						<div class="">
-							<a class="sidebar-group-title" href="developer-docs/customize_sunbird/">Customizing Sunbird</a>
-						</div>
-					</li>-->
-					<li>
-						<div class="">
-							<a  href="docs/2.0/apis/">API References</a>
-							<ul class="sidebar-group">
-								<li>
-									<a href="apis/bulkupload/" target="_blank">Bulk Upload Service APIs</a>
-								</li>
-								<li>
-									<a href="apis/content/" target="_blank">Content APIs</a>
-								</li>
-								<li>
-									<a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management APIs</a>
-								</li>
-								<li>
-									<a href="apis/datasyncapi/" target="_blank">Data Sync APIs</a>
-								</li>
-								<li>
-									<a href="apis/metricsapi/" target="_blank">Metrics APIs</a>
-								</li>
-								<li>
-									<a href="apis/notificationapi/" target="_blank">Notification APIs</a>
-								</li>
-								<li>
-									<a href="apis/orgapi/" target="_blank">Organisation Management APIs</a>
-								</li>
-								<li>
-									<a href="apis/userapi/" target="_blank">User APIs</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a href="docs/2.0/developer-docs/troubleshooting/">Troubleshooting</a>
-					</li>
-			</li>
-		</ul>
-		<a href="docs/2.0/faqs/">
-			<h4 class="sidebar-group-title">Frequently asked questions</h4>
-		</a>
-		<ul class="sidebar-group faqs" >
-			<li>
-				<a href="docs/2.0/faqs/audience/">Audience</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/content_format/">Content Format</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/content_repo/">Content Repositories</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/contentreviews/">Content Review</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/content_types/">Content Types</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/content_upload/">Content Upload</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/feature/">Features</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/fixerrors/">Fix Errors</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/helpsupport/">Help Support</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/intellectual_propertylicensesstandards/">Intellectual Property Licenses Standards</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/registrationenrolment/">Registration and Enrollment</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/signin/">Sign In</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/taxonomymetadataframework/">Taxonomy Meta Data Framework</a>
-			</li>
-			<li>
-				<a href="docs/2.0/faqs/user_rightspermissions/">Users Rights and Permission</a>
-			</li>
-		</ul>
-		<a href="docs/2.0/glossary/">
-			<h4 class="sidebar-group-title">Glossary</h4>
-		</a>
-	
-
-				</div>
-				<div class="version version-3">
-					
-	<a href="docs/3.0/architecture/">
-		<h4 class="sidebar-group-title">Architecture 3.0</h4>
-	</a>
-	<ul class="sidebar-group architecture">
-		<li>
-			<a href="docs/3.0/architecture/overview/">Overview</a>
-		</li>
-		<li>
-			<a href="docs/3.0/architecture/design/">Design</a>
-		</li>
-				<li>
-					<div class="">
-						<a href="docs/3.0/architecture/views/elementryview/">Views</a>
-						<ul class="sidebar-group">
-							<li>
-								<a href="docs/3.0/architecture/views/logical/">Logical View</a>
-							</li>
-							<li>
-								<a href="docs/3.0/architecture/views/physical/">Physical View</a>
-							</li>
-							<li>
-								<a href="docs/3.0/architecture/views/conceptual/">Conceptual View</a>
-							</li>
-							<li>
-								<a href="docs/3.0/architecture/views/deployment/">Deployment View</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<a href="docs/3.0/architecture/usecase/">Use Cases</a>
-				</li>
-			</ul>
-			<a href="docs/3.0/features-documentation/">
-				<h4 class="sidebar-group-title">Product Features 3.0</h4>
-			</a>
-			<ul class="sidebar-group features-documentation" >
-				<li>
-					<a href="docs/3.0/features-documentation/onboarding/">Onboarding</a>
-				</li>
-				<li>
-					<a href="docs/3.0/features-documentation/login/">Login</a>
-				</li>
-				<li>
-					<a href="docs/3.0/features-documentation/register_org/">Register Organizations</a>
-				</li>
-				<li>
-					<a href="docs/3.0/features-documentation/register_user/">Register Users</a>
-				</li>
-				<li>
-					<a href="docs/3.0/features-documentation/userrolepermission/">User Roles and Permissions</a>
-				</li>
-				<li>
-					<div class="">
-						<ul class="sidebar-group">
-							<li>
-								<a href="docs/3.0/features-documentation/userprofile/">User Profile</a>
-							</li>
-							<li>
-								<a href="docs/3.0/features-documentation/workspace/">Workspace</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<a href="docs/3.0/features-documentation/coursetraining/">Courses and Training</a>
-				</li>
-				<li>
-					<a href="docs/3.0/features-documentation/library/">Library</a>
-				</li>
-				<li>
-					<a href="docs/3.0/features-documentation/contentlifecycle/">Content Lifecycle</a>
-				</li>
-				<li>
-					<a href="docs/3.0/features-documentation/contentcreation/">Content Creation</a>
-				</li>
-				<li>
-					<a href="docs/3.0/features-documentation/contenteditor/">Content Editor</a>
-				</li>
-				<!--<li>
-					<a href="features-documentation/consumption/">Consume Study Material</a>
-				</li>-->
-				</li>
-				<li>
-					<div class="">
-						<a href="docs/3.0/features-documentation/guidelines/" >Guidelines</a>
-						<ul class="sidebar-group">
-							<li>
-								<a href="docs/3.0/features-documentation/intellectualproperty/">Intellectual Property</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<!--<li>
-					<a href="features-documentation/reportinganalytics/">Reporting and Analytics</a>
-				</li>-->
-				<li>
-					<a href="docs/3.0/features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
-				</li>
-		</ul>
-		<a href="docs/3.0/developer-docs/">
-				<h4 class="sidebar-group-title">Developer Documentation</h4>
-			</a>
-		<ul class="sidebar-group developer-docs">
-					<li>
-						<a href="docs/3.0/developer-docs/installation/">Installation Overview</a>
-					</li>
-					<!--<li>
-						<a href="developer-docs/hosting_sunbird/">Hosting Sunbird</a>
-					</li>-->
-					<li>
-						<a  href="docs/3.0/developer-docs/installation/installing_sunbirdon_laptop/">Install Sunbird on Laptop</a>
-					</li>
-					<li>
-						<div class="">
-							<a href="docs/3.0/developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
-							<ul class="sidebar-group">
-								<li>
-									<a href="docs/3.0/developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
-								</li>
-								<li>
-									<a href="docs/3.0/developer-docs/installation/setup_db/">Setup Databases</a>
-								</li>
-								<li>
-									<a href="docs/3.0/developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
-								</li>
-								<li>
-									<a href="docs/3.0/developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
-								</li>
-								<li>
-									<a href="docs/3.0/developer-docs/installation/cust_sunbird/">Customizing Assets</a>
-								</li>
-								<li>
-									<a href="docs/3.0/developer-docs/installation/check_installation/">Check Installation</a>
-								</li>
-								<!--<li>
-									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
-								</li>-->
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a href="docs/3.0/developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
-					</li>
-					<!--<li>
-						<div class="">
-							<a class="sidebar-group-title" href="developer-docs/extending_sunbird/">Extending Sunbird</a>
-						</div>
-					</li>
-					<li>
-						<div class="">
-							<a class="sidebar-group-title" href="developer-docs/customize_sunbird/">Customizing Sunbird</a>
-						</div>
-					</li>-->
-					<li>
-						<div class="">
-							<a  href="docs/3.0/apis/">API References</a>
-							<ul class="sidebar-group">
-								<li>
-									<a href="apis/bulkupload/" target="_blank">Bulk Upload Service APIs</a>
-								</li>
-								<li>
-									<a href="apis/content/" target="_blank">Content APIs</a>
-								</li>
-								<li>
-									<a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management APIs</a>
-								</li>
-								<li>
-									<a href="apis/datasyncapi/" target="_blank">Data Sync APIs</a>
-								</li>
-								<li>
-									<a href="apis/metricsapi/" target="_blank">Metrics APIs</a>
-								</li>
-								<li>
-									<a href="apis/notificationapi/" target="_blank">Notification APIs</a>
-								</li>
-								<li>
-									<a href="apis/orgapi/" target="_blank">Organisation Management APIs</a>
-								</li>
-								<li>
-									<a href="apis/userapi/" target="_blank">User APIs</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li>
-						<a href="docs/3.0/developer-docs/troubleshooting/">Troubleshooting</a>
-					</li>
-			</li>
-		</ul>
-		<a href="docs/3.0/faqs/">
-			<h4 class="sidebar-group-title">Frequently asked questions</h4>
-		</a>
-		<ul class="sidebar-group faqs" >
-			<li>
-				<a href="docs/3.0/faqs/audience/">Audience</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/content_format/">Content Format</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/content_repo/">Content Repositories</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/contentreviews/">Content Review</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/content_types/">Content Types</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/content_upload/">Content Upload</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/feature/">Features</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/fixerrors/">Fix Errors</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/helpsupport/">Help Support</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/intellectual_propertylicensesstandards/">Intellectual Property Licenses Standards</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/registrationenrolment/">Registration and Enrollment</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/signin/">Sign In</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/taxonomymetadataframework/">Taxonomy Meta Data Framework</a>
-			</li>
-			<li>
-				<a href="docs/3.0/faqs/user_rightspermissions/">Users Rights and Permission</a>
-			</li>
-		</ul>
-		<a href="docs/3.0/glossary/">
-			<h4 class="sidebar-group-title">Glossary</h4>
-		</a>
-	
-
-				</div>
 			</div>
 			<script>
 				$("a[href$='docs/contributions/contribution_guidelines/']").addClass("sidebar-link-selected");
@@ -880,30 +414,30 @@
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Writing Guidelines</span></a>
+              <a href="#writing-guidelines"><span class="tocnumber">1 .</span> <span class="toctext">Writing Guidelines</span></a>
               <ul>
                 <li class="toc_level-2 toc_section-2">
-                  <a href="#link1-1-1"><span class="tocnumber">1.1 .</span> <span class="toctext">How to structure a document?</span></a>
+                  <a href="#how-to-structure-a-document"><span class="tocnumber">1.1 .</span> <span class="toctext">How to structure a document?</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-3">
-                  <a href="#link1-1-2"><span class="tocnumber">1.2 .</span> <span class="toctext">Styles</span></a>
+                  <a href="#styles"><span class="tocnumber">1.2 .</span> <span class="toctext">Styles</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-4">
-                  <a href="#link1-1-3"><span class="tocnumber">1.3 .</span> <span class="toctext">Voice</span></a>
+                  <a href="#voice"><span class="tocnumber">1.3 .</span> <span class="toctext">Voice</span></a>
                 </li>
               </ul>
             </li>
             <li class="toc_level-1 toc_section-5">
-              <a href="#link1-5"><span class="tocnumber">2 .</span> <span class="toctext">Documentation contribution process flows</span></a>
+              <a href="#documentation-contribution-process-flows"><span class="tocnumber">2 .</span> <span class="toctext">Documentation contribution process flows</span></a>
             </li>
             <li class="toc_level-1 toc_section-6">
-              <a href="#link1-6"><span class="tocnumber">3 .</span> <span class="toctext">How to edit an existing documentation page?</span></a>
+              <a href="#how-to-edit-an-existing-documentation-page"><span class="tocnumber">3 .</span> <span class="toctext">How to edit an existing documentation page?</span></a>
             </li>
             <li class="toc_level-1 toc_section-7">
-              <a href="#link1-7"><span class="tocnumber">4 .</span> <span class="toctext">How to report an issue?</span></a>
+              <a href="#how-to-report-an-issue"><span class="tocnumber">4 .</span> <span class="toctext">How to report an issue?</span></a>
             </li>
             <li class="toc_level-1 toc_section-8">
-              <a href="#link1-8"><span class="tocnumber">5 .</span> <span class="toctext">How to add a page or a section?</span></a>
+              <a href="#how-to-add-a-page-or-a-section"><span class="tocnumber">5 .</span> <span class="toctext">How to add a page or a section?</span></a>
             </li>
           </ul>
         </td>
@@ -928,10 +462,10 @@
 
 <p>You may want to brush up on Markdown syntax. Here’s a handy <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Markdown guide</a> and <a href="https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf" target="_blank">cheat sheet</a>.</p>
 
-<h2 id="link1-1">Writing Guidelines</h2>
+<h2 id="writing-guidelines">Writing Guidelines</h2>
 <p>Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the <a href="docs/contributions/contribution_guidelines/#link1-1-1">How to structure a document?</a> section and the <a href="docs/contributions/styleguide" target="_blank">Sunbird style guide</a> which follows to ensure the pages you submit are consistent with the rest of Sunbird’s documentation.</p>
 
-<h3 id="link1-1-1">How to structure a document?</h3>
+<h3 id="how-to-structure-a-document">How to structure a document?</h3>
 
 <p>Structuring your content is nothing but chunking the information into logical units. Developing a simple framework for your writing before you start can save considerable time and will prevent the text from meandering.</p>
 
@@ -953,7 +487,7 @@
 
 <p>Other than heading levels, you can structure the information on a page using paragraphs, tables, ordered (numbered) or unordered (bulleted) lists, infographics viz. diagrams, charts; images and notes.</p>
 
-<h3 id="link1-1-2">Styles</h3>
+<h3 id="styles">Styles</h3>
 <p>You can use the following styles when formatting your document.</p>
 
 <h4 id="titles-and-headings">Titles and headings</h4>
@@ -1046,7 +580,7 @@
 
 <p>When embedding a link in a documentation page, always make sure the link text describes the destination of the link. “Click here” is not a good description, because it does not tell the user where the link will take them. If you can’t fully describe the destination of the link and still maintain good sentence flow, add a title tag. Title tags, <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-text" target="_blank">used appropriately</a>, are important for making the pages accessible.</p>
 
-<h3 id="link1-1-3">Voice</h3>
+<h3 id="voice">Voice</h3>
 
 <ul>
   <li><strong>Reinforce the Sunbird brand:</strong> Anything written at Sunbird.org becomes part of the Sunbird experience and conveys the Sunbird spirit.</li>
@@ -1089,7 +623,7 @@ Don’t twist sentences into knots trying to avoid this, though. Also, at times,
   <li><strong>User-test your writing</strong>: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.</li>
 </ul>
 
-<h2 id="link1-5">Documentation contribution process flows</h2>
+<h2 id="documentation-contribution-process-flows">Documentation contribution process flows</h2>
 
 <p>Click the links below to view typical workflows to collaborate for Sunbird documentation</p>
 
@@ -1101,7 +635,7 @@ Don’t twist sentences into knots trying to avoid this, though. Also, at times,
   <li><a href="docs/contributions/images/review_process.png" target="_blank">Review Process</a></li>
 </ul>
 
-<h2 id="link1-6">How to edit an existing documentation page?</h2>
+<h2 id="how-to-edit-an-existing-documentation-page">How to edit an existing documentation page?</h2>
 
 <p>You can edit an existing page to correct inconsistencies or add missing information</p>
 
@@ -1186,7 +720,7 @@ Don’t twist sentences into knots trying to avoid this, though. Also, at times,
   </tr>
  </table>
 
-<h2 id="link1-7">How to report an issue?</h2>
+<h2 id="how-to-report-an-issue">How to report an issue?</h2>
 
 <p>There could be inconsistencies in formatting, gaps in information that you notice (but cannot fix), etc. In such cases all you need to do is report the issue .</p>
 
@@ -1241,7 +775,7 @@ Don’t twist sentences into knots trying to avoid this, though. Also, at times,
   </tr>
 </table>
 
-<h2 id="link1-8">How to add a page or a section?</h2>
+<h2 id="how-to-add-a-page-or-a-section">How to add a page or a section?</h2>
 
 <p>To ensure that Sunbird users benefit enhancing the knowledge base is of primary importance</p>
 
