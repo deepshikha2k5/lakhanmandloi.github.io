@@ -28,16 +28,9 @@
 			{% assign paths = page.url | split: '/' %}
 			{% assign version = paths[2] | split: '.' %}
 			{% include version.html %}
-			<div class="sidebar-wrapper version-{{version[0]}} {{paths[3]}}">
-				<div class="version version-1">
-					{% include sidebar-1.0.html %}
-				</div>
-				<div class="version version-2">
-					{% include sidebar-2.0.html %}
-				</div>
-				<div class="version version-3">
-					{% include sidebar-3.0.html %}
-				</div>
+			<div class="sidebar-wrapper  {{paths[3]}}">
+				{% assign sidebarfile = paths[2] | prepend: 'sidebar-' | append: '.html' %}
+				{% include {{ sidebarfile }} %}
 			</div>
 			<script>
 				$("a[href$='{{page.url | remove_first: "/" }}']").addClass("sidebar-link-selected");
