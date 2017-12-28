@@ -79,3 +79,5 @@ MongoDB   |A store for session data     |The player service
 **A**: Sunbird provides dashboards for admins that provide summary views of the telemetry. For raw telemetry data, you need to pull out the data from the ekstep platform. To do so, use the [On Demand Data Exhaust API](https://community.ekstep.in/developer-apis/on-demand-data-exhaust-api){:target="_blank"} 
 
 **Note**: Sign in to the Ekstep Community portal to access the API (https://community.ekstep.in)
+
+
