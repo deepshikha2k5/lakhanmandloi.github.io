@@ -36,13 +36,7 @@ jobs:
            curl \
               -X POST \
               -u $guser:x-oauth-basic \
-              -d '{"body": "Hello @'"$username"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'. <br /> Modified Pages Are - "
-              for row in $(echo "${updatedfiles}" | jq -r '.[] | @base64'); do  
-                _jq() {
-                echo ${row} | base64 --decode | jq -r ${1}
-                }
-                echo $(_jq '.filename')
-                done"
+              -d '{"body": "Hello @'"$username"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'. <br /> Modified Pages Are - 
               "}' \
               https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER/comments
            else
