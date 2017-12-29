@@ -26,23 +26,26 @@ jobs:
       - type: shell
         command: |
            cd _site
+           
            if [ "$CIRCLE_BRANCH" != "dev" ]
            then
            aws s3 sync --delete . s3://sunbird-trial/pr/$CIRCLE_PR_NUMBER
-           prdata=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER) 
-           updatedfiles=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/pulls/$CIRCLE_PR_NUMBER/files) 
+           prdata=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER)
            username=$(echo "${prdata}" | jq '.user.login')
-           username=${username//\"/}
+           contributor=${username//\"/} 
+           updatedfiles=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/pulls/$CIRCLE_PR_NUMBER/files) 
+           for row in $(echo "${updatedfiles}" | jq -r '.[] | @base64'); do  
+            _jq() 
+            {
+             echo ${row} | base64 --decode | jq -r ${1}
+            }
+            echo $(_jq '.filename')
+            updatedfileslist=$updatedfileslist $(_jq '.filename')
+           done 
            curl \
               -X POST \
               -u $guser:x-oauth-basic \
-              -d '{"body": "Hello @'"$username"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'. <br/> Modified pages are - '" for row in $(echo "${updatedfiles}" | jq -r '.[] | @base64'); do 
-              _jq() {
-                echo ${row} | base64 --decode | jq -r ${1}
-                }
-                echo $(_jq '.filename')
-                done"'
-              "}' \
+              -d '{"body": "Hello @'"$contributor"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'. <br/> Modified pages are -'"$updatedfileslist"' "}' \
               https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER/comments
            else
            aws s3 sync --delete . s3://sunbird-trial/review/
