@@ -40,7 +40,8 @@ jobs:
             {
              echo ${row} | base64 --decode | jq -r ${1}
             }
-            updatedfilepath=$(_jq '.filename')
+            siteurl=' - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'
+            updatedfilepath=$siteurl$(_jq '.filename')
             updatedfileslist=$updatedfileslist$updatedfilepath
            done 
            curl \
