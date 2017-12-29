@@ -28,7 +28,7 @@ jobs:
            cd _site
            if [ "$CIRCLE_BRANCH" != "dev" ]
            then
-           
+            
            echo $CIRCLE_BRANCH
            prdata=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER)
            username=$(echo "${prdata}" | jq '.user.login')
