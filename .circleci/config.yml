@@ -41,12 +41,10 @@ jobs:
              echo ${row} | base64 --decode | jq -r ${1}
             }
             filename=$(_jq '.filename')
-            filename=${filename//.md/}
+            filename=${filename//\.md/}
             filename=${filename//index/} 
-            siteurlstart=' - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/"$CIRCLE_PR_NUMBER"'
-            siteurlend=' <br />'
-            updatedfilepath=$siteurlstart$filename$siteurlend
-            updatedfileslist=$updatedfileslist$updatedfilepath
+            url=' - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/"$CIRCLE_PR_NUMBER"/"$filename" <br /> '
+            updatedfileslist=$updatedfileslist$url
            done 
            curl \
               -X POST \
