@@ -40,13 +40,13 @@ jobs:
             {
              echo ${row} | base64 --decode | jq -r ${1}
             }
-            filename=$(_jq '.filename')
-            if ["$filename" == *"docs/"* ];
+            file=$(_jq '.filename')
+            if ["$file" == *"docs/"* ];
             then
-            filename=${filename//\.md/}
-            filename=${filename//index/}
-            filename=${filename//.html/}
-            url='- http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$filename' <br /> '
+            file=${file//\.md/}
+            file=${file//index/}
+            file=${file//.html/}
+            url='- http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$file' <br /> '
             updatedfileslist=$updatedfileslist$url
             fi
            done 
