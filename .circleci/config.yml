@@ -42,9 +42,12 @@ jobs:
             }
             filename=$(_jq '.filename')
             filename=${filename//\.md/}
-            filename=${filename//index/} 
-            url=' http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/"$CIRCLE_PR_NUMBER"/"$filename" <br /> '
+            filename=${filename//index/}
+            echo $filename
+            url='http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$filename' <br /> '
+            echo $url
             updatedfileslist=$updatedfileslist$url
+            echo $updatedfileslist
            done 
            curl \
               -X POST \
