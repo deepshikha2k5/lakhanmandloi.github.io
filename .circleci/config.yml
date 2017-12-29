@@ -42,7 +42,7 @@ jobs:
             }
             file=$(_jq '.filename')
             echo $file
-            if [[ "$file" == *docs/* ]]
+            if [[ "$file" == *"docs/"* ]]
             then
             echo $file
             file=${file//\.md/}
