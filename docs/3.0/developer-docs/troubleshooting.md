@@ -8,7 +8,7 @@ keywords: Troubleshoot, answers, Database, application, Frequently asked questio
 allowSearch: true
 ---
 ## Database
-
+ 
 **Q:** Are data initialization scripts available?
 
 **A:** Use the Cassandra.cql file to do the initial data setup. 

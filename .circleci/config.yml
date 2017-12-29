@@ -40,13 +40,17 @@ jobs:
             {
              echo ${row} | base64 --decode | jq -r ${1}
             }
-            filename=$(_jq '.filename')
-            filename=${filename//\.md/}
-            filename=${filename//index/}
-            if [ "$filename" != ".circleci/config.yml" ]
+            file=$(_jq '.filename')
+            echo $file
+            if [[ "$file" == *"docs/"* ]] && [[ "$file" == *".md"* ]]
             then
-            url='- http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$filename' <br /> '
+            echo $file
+            file=${file//\.md/}
+            file=${file//index/}
+            file=${file//.html/}
+            url='- http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$file' <br /> '
             updatedfileslist=$updatedfileslist$url
+            echo $url
             fi
            done 
            curl \
