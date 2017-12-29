@@ -41,7 +41,7 @@ jobs:
              echo ${row} | base64 --decode | jq -r ${1}
             }
             filename=$(_jq '.filename')
-            if [[ "$filename" == *"/docs/"* ] && [ "$filename" == *".md"* ]];
+            if [[ "$filename" == *"/docs/"* ]] && [[ "$filename" == *".md"* ]];
             then
             filename=${filename//\.md/}
             filename=${filename//index/}
