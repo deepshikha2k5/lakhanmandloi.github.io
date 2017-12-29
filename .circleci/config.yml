@@ -34,7 +34,14 @@ jobs:
            contributor=${username//\"/} 
            updatedfiles=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/pulls/$CIRCLE_PR_NUMBER/files) 
            updatedfileslist=' '
-           
+           for row in $(echo "${updatedfiles}" | jq -r '.[] | @base64')
+           do  
+            _jq() 
+            {
+             echo ${row} | base64 --decode | jq -r ${1}
+            }
+            echo $(_jq '.filename')
+           done 
            curl \
               -X POST \
               -u $guser:x-oauth-basic \
