@@ -10,7 +10,7 @@ keywords: >-
 published: true
 ---
  
-
+ 
 **Who can create content on the platform?**
 
 {% ingredient /faqs/createcont_who %}{% endingredient %}

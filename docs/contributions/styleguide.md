@@ -8,7 +8,7 @@ keywords: Sunbird, Style guide, Cheatsheet
 published: true
 allowSearch: true
 ---
-
+ 
 
 *This style guide will help you to keep the tone of voice consistent throughout. It contains content rules that covers Grammar, Language, Formatting and Tone.*
 
