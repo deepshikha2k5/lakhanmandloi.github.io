@@ -45,7 +45,7 @@ jobs:
             filename=${filename//index/}
             if [ "$filename" != ".circleci/config.yml" ]
             then
-            url='http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$filename' <br /> '
+            url='- http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$filename' <br /> '
             updatedfileslist=$updatedfileslist$url
             fi
            done 
