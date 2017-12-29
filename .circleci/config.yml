@@ -41,8 +41,10 @@ jobs:
              echo ${row} | base64 --decode | jq -r ${1}
             }
             file=$(_jq '.filename')
-            if ["$file" == *"docs/"* ];
+            echo $file
+            if ["$file" == *"docs/"*];
             then
+            echo $file
             file=${file//\.md/}
             file=${file//index/}
             file=${file//.html/}
