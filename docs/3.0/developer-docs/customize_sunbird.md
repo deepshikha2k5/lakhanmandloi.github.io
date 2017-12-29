@@ -4,7 +4,7 @@ directory: developer-docs
 title: Customizing Sunbird
 page_title: Customizing Sunbird
 description: Customizing Sunbird
-keywords: Customize, Code, look & feel 
+keywords: Customize, Code, look & feel  
 ---
  
 
