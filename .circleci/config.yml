@@ -40,12 +40,12 @@ jobs:
             {
              ${row} | base64 --decode | jq -r ${1}
             }
-            updatedfileslistappended='"$updatedfileslist" - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/"$(_jq '.filename')"' 
+            updatedfileslist='"$updatedfileslist" - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/"$(_jq '.filename')"' 
            done 
            curl \
               -X POST \
               -u $guser:x-oauth-basic \
-              -d '{"body": "Hello @'"$contributor"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'. <br/> Modified pages are -'"$updatedfileslistappended"' "}' \
+              -d '{"body": "Hello @'"$contributor"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'. <br/> Modified pages are -'"$updatedfileslist"' "}' \
               https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER/comments
            else
            aws s3 sync --delete . s3://sunbird-trial/review/
