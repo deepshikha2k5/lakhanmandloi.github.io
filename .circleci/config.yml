@@ -28,22 +28,13 @@ jobs:
            cd _site
            if [ "$CIRCLE_BRANCH" != "dev" ]
            then
-            
-           echo $CIRCLE_BRANCH
+           aws s3 sync --delete . s3://sunbird-trial/pr/$CIRCLE_PR_NUMBER
            prdata=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER)
            username=$(echo "${prdata}" | jq '.user.login')
            contributor=${username//\"/} 
            updatedfiles=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/pulls/$CIRCLE_PR_NUMBER/files) 
-           updatedfileslist=''
-           for row in $(echo "${updatedfiles}" | jq -r '.[] | @base64')
-           do  
-            _jq() 
-            {
-             echo ${row} | base64 --decode | jq -r ${1}
-            }
-            echo $(_jq '.filename')
-            updatedfileslist=$updatedfileslist $(_jq '.filename')
-           done 
+           updatedfileslist=' '
+           
            curl \
               -X POST \
               -u $guser:x-oauth-basic \
