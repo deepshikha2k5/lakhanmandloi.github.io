@@ -28,26 +28,24 @@ jobs:
            cd _site
            if [ "$CIRCLE_BRANCH" != "dev" ]
            then
-           
-           echo $CIRCLE_BRANCH
+           aws s3 sync --delete . s3://sunbird-trial/pr/$CIRCLE_PR_NUMBER
            prdata=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER)
            username=$(echo "${prdata}" | jq '.user.login')
            contributor=${username//\"/} 
            updatedfiles=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/pulls/$CIRCLE_PR_NUMBER/files) 
-           updatedfileslist=''
+           updatedfileslist=' '
            for row in $(echo "${updatedfiles}" | jq -r '.[] | @base64')
            do  
             _jq() 
             {
-             echo ${row} | base64 --decode | jq -r ${1}
+             ${row} | base64 --decode | jq -r ${1}
             }
-            echo $(_jq '.filename')
-            updatedfileslist=$updatedfileslist $(_jq '.filename')
+            updatedfileslistappended='"$updatedfileslist" - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/"$(_jq '.filename')"'
            done 
            curl \
               -X POST \
               -u $guser:x-oauth-basic \
-              -d '{"body": "Hello @'"$contributor"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'. <br/> Modified pages are -'"$updatedfileslist"' "}' \
+              -d '{"body": "Hello @'"$contributor"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'. <br/> Modified pages are -'"$updatedfileslistappended"' "}' \
               https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER/comments
            else
            aws s3 sync --delete . s3://sunbird-trial/review/
