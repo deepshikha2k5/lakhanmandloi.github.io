@@ -40,7 +40,7 @@ jobs:
             {
              ${row} | base64 --decode | jq -r ${1}
             }
-            updatedfileslistappended=$updatedfileslist$(_jq '.filename')
+            updatedfileslistappended=$updatedfileslist $(_jq '.filename')
            done 
            curl \
               -X POST \
