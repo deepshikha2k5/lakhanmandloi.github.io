@@ -49,7 +49,7 @@ jobs:
               -d '{"body": "Hello @'"$contributor"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-trial.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'. <br/> Modified pages are -'"$updatedfileslist"' "}' \
               https://api.github.com/repos/lakhanmandloi/lakhanmandloi.github.io/issues/$CIRCLE_PR_NUMBER/comments
            else
-           aws s3 sync --delete . s3://sunbird-trial/review/
+           aws s3 sync --delete --quiet . s3://sunbird-trial/review/
            fi
            
   staging:
