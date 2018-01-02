@@ -3913,7 +3913,11 @@ body > header {
 
 #toc-container {
   margin: 0 0 10px 10px;
-  float: right; }
+  float: right;
+  display: none; }
+
+.latest #toc-container {
+  display: block; }
 
 #toc-container #toc td {
   white-space: normal;
