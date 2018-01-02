@@ -15,7 +15,7 @@ It is our endeavor to ensure that Sunbird documentation is reliable and up-to-da
 
 * Adding a page or a section
 
-* Reporting an issue
+* Reporting an issue 
 
 Sunbird manages documentation similar to how it manages code. The docs are in a [Github repository](https://github.com/project-sunbird/project-sunbird.github.io){:target="_blank"} as Markdown documents. If you’re comfortable using Git and Github for source code or any other work, you’ll find editing and updating Sunbird documentation a breeze. 
 

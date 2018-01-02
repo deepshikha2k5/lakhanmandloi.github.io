@@ -7,7 +7,7 @@ description: Architecture Design
 keywords: Architecture Design
 published: true
 allowSearch: true
----
+--- 
 With a multi-tenant and robust framework, Sunbird architectural design is resilient, flexible and agile. The service oriented & microservice patterns enhances the structure and functionality of Sunbird. Sunbird architectural design is amalgamation of layered aarchitectural style and service-oriented architectural style. It follows the following design principles that maximizes on abstraction and security, enables portability, augments testing, provides seamless maintainability, gives better scalability, provides higher availability, interoperability and rationalization. 
 
 ## Architectural Design Principles
