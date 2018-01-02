@@ -1,3 +1,7 @@
+{% assign paths = page.url | split: '/' %}
+{% assign version = paths[2] | split: '.' %}
+{% assign sidebarfile = paths[2] | prepend: 'sidebar-' | append: '.html' %}
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,7 +13,7 @@
 	{% endif %} 
   </head>
   <body id="body">
-  <div class="container inner container-height docs">
+  <div class="container inner container-height docs {{ paths[2] }} {% if site.latest == paths[2] %}latest{% endif %}">
     <header class="logo-container">
       <div class="logo">
         <a href="index.html">
@@ -25,11 +29,8 @@
 			{% if site.showSearch == true %}
 				{% include search.html %}
 			{% endif %}
-			{% assign paths = page.url | split: '/' %}
-			{% assign version = paths[2] | split: '.' %}
 			{% include version.html %}
 			<div class="sidebar-wrapper  {{paths[3]}}">
-				{% assign sidebarfile = paths[2] | prepend: 'sidebar-' | append: '.html' %}
 				{% include {{ sidebarfile }} %}
 			</div>
 			<script>
@@ -64,9 +65,6 @@
           <hr />
           
           <p class="edit-para text-right">
-			<!--<a target="_blank"  class="" href="">
-				  <i>Contribution Guidelines</i>
-			  </a> &nbsp;&nbsp;-->
 			<a target="_blank" href="https://github.com/lakhanmandloi/lakhanmandloi.github.io/edit/dev/{{page.path}}" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/lakhanmandloi/lakhanmandloi.github.io/issues" title="Report issue">
