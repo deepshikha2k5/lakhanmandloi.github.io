@@ -9,4 +9,4 @@ published: true
 ---
 
 
-{% ingredient/developer-docs/getting_started_supported_environment %}{% endingredient %}
+{% ingredient/developer-docs/getting_started_supported_environment %}{% endingredient %} 
